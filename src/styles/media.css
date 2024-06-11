@@ -1,0 +1,25 @@
+@media (min-width: 400px) and (max-width: 900px) {
+    .black-header{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .main-header-info{
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .header-info{
+        font-size: 12px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 50px;
+        position: absolute;
+
+    }
+    .navbar{
+        padding: 0px;
+        width: 100%;
+    }
+}

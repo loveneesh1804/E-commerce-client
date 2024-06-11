@@ -1,0 +1,490 @@
+.bar-container,.pie-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.line-container{
+    display: flex;
+    flex-direction: column;
+}
+.pie-container>h1{
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin: 0px;
+    padding: 1rem 0rem 0.5rem 0rem;
+    margin-bottom: 1rem;
+}
+.line-container>h1{
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin: 0px;
+    padding: 1rem 0rem 0.5rem 0rem;
+    margin-bottom: 1rem;
+}
+.bar-container>h1{
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin: 0px;
+    padding: 1rem 0rem 0.5rem 0rem;
+    margin-bottom: 1rem;
+}
+.pie-container>div>div{
+    background-color: white;
+    padding: 2rem;
+    margin: 0.5rem 0rem;
+    width: 35%;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.bar-container>div{
+    background-color: white;
+    padding: 2rem;
+    margin: 0.5rem 0rem;
+    width: 80%;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.line-container>div{
+    background-color: white;
+    padding: 2rem;
+    margin: 0rem 0rem;
+    width: 80%;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.pie-container>div>div>h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 2rem;
+    opacity: 0.8;
+    font-size: 18px;
+}
+.bar-container>div>h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 2rem;
+    opacity: 0.8;
+    font-size: 18px;
+}
+.line-container>div{
+    margin: auto;
+    margin-top: 2rem;
+}
+.line-container>div:last-child{
+    margin-bottom: 2rem;
+}
+.line-container>div>h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 2rem;
+    opacity: 0.8;
+    font-size: 18px;
+}
+.bar-container>div:last-child{
+    margin-bottom: 20px;
+}
+.pie-container>div:last-child{
+    margin-bottom: 20px;
+}
+.pie-container>div h2{
+    margin-top: 0px;
+    font-size: 20px;
+}
+.line-chart{
+    margin-top: -10px;
+}
+.app-container{
+    display: flex;
+    flex-direction: column;
+}
+.app-container>h1{
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin: 0px;
+    padding: 1rem 0rem 0.5rem 0rem;
+    margin-bottom: 1rem;
+}
+.stopwatch-main{
+    background-color: white;
+    padding: 12rem 5rem;
+    margin: 0.5rem 0rem;
+    margin: auto;
+    width: 60%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    text-align: center;
+}
+.stopwatch-main>button{
+    padding: 9px 18px;
+    margin: 0.5rem 1rem;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+}
+.stopwatch-main>button:last-child{
+    background-color: red;
+}
+.stopwatch-main>button:hover{
+    opacity: 0.5;
+}
+.stopwatch-main>h1{
+    font-weight: 300;
+    font-size: 50px;
+}
+.coupon-container{
+    background-color: white;
+    padding: 3rem 5rem;
+    margin: auto;
+    width: 60%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 2rem;
+}
+.coupon-display{
+    padding: 1rem 0rem;
+    margin: auto;
+    width: 75%;
+    margin-top: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.coupon-display>h1{
+    text-align: center;
+}
+.coupon-code{
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: relative;
+}
+.coupon-code>h2{
+    font-size: 17px;
+    margin: 5px 0px;
+}
+.coupon-code>svg{
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #DC3545;
+    color: white;
+    font-size: 18px;
+    top: -10px;
+    right: -10px;
+}
+.coupon-code>span{
+    font-size: 14px;
+}
+
+.f2>label{
+    top: -12px;
+}
+.first{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+.first>div{
+    margin-bottom: 10px;
+}
+.first>div:first-child{
+    width: 50%;
+}
+.first>div:nth-child(2){
+    width: 20%;
+}
+.first>div:last-child{
+    width: 20%;
+}
+fieldset{
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
+fieldset span{
+    font-size: 14px;
+    opacity: 0.6;
+}
+fieldset{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+fieldset>span{
+    padding: 3.5px 0px;
+}
+fieldset>div{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+fieldset>legend{
+   text-align: right;
+}
+fieldset+button{
+    border: none;
+    width: 50%;
+    padding: 9px 18px;
+    color: white;
+    background-color: rgb(14, 87, 232);
+    border-radius: 5px;
+    margin-top: 40px;
+}
+fieldset+button:hover{
+    opacity: 0.5;
+}
+code{
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    position: relative;
+    width: 50%;
+}
+code:hover span{
+    opacity: 1;
+    cursor: pointer;
+}
+code>span{
+    opacity: 0;
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.pie-flex{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+}
+.pie-container>div>div{
+   margin: 0px;
+   height: 450px;
+}
+
+
+.skeleton-product{
+    display: flex;
+    gap: 10px;
+}
+
+.skeleton-product-grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 440px;
+    gap: 20px;
+}
+.skeleton-shop{
+    padding: 0rem 2rem;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skeleton-shop>h2{
+    text-transform: uppercase;
+    font-weight: 200;
+    opacity: 0.7;
+    margin: 20px 0px;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.inventory-skeleton{
+    display: flex;
+    gap: 10px;
+    padding: 5px 0px;
+}
+.widget-skeleton{
+    display: flex;
+    gap: 20px;
+}
+.widget-skeleton>article{
+    display: flex;
+    gap: 10px;
+}
+.widget-skeleton>article>div:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.pie-skeleton{
+    display: flex;
+    gap: 70px;
+}
+.pie-load{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.skeleton-table{
+    width: 62%;
+}
+.skeleton-table>h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.skeleton-table>table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+.skeleton-table>table>thead{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.skeleton-table>table>thead>tr>th{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.skeleton-table td{
+    padding: 10px;
+}
+.skeleton-table span{
+    margin-left: 20px;
+}
+
+.user-table-skeleton td{
+   padding-left: 50px;
+}
+.no-coupon{
+    background-color: white;
+    text-transform: uppercase;
+    width: 75%;
+    text-align: center;
+    font-weight: 200;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.skeleton-order{
+    padding: 20px 0px;
+}
+.skeleton-order>span{
+    margin: 2px 0px;
+}
+.my-order-skeleton>span{
+    margin: 2px 0px;
+}
+.skeleton-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.skeleton-flex-1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.skeleton-form>span{
+    margin: 24px 0px;
+}
+.skeleton-form>span:last-child{
+    margin-top: 180px;
+    margin-left: 50px;
+}
+.skeleton-manage,.skeleton-manage>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.skeleton-manage{
+    height: 635px;
+}
+.dummy-div>div{
+    margin-bottom: 60px;
+}
+.upload-img{
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    text-align: center;
+    border-radius: 5px;
+    width: 35%;
+    margin: auto;
+}
+.upload-img svg{
+    color: rgb(14, 87, 232);
+}
+.upload-img p{
+    font-size: 16px;
+    margin: 0px;
+    color: rgb(14, 87, 232);
+    font-weight: 600;
+}
+.upload-img h4{
+    margin: 0px;
+    font-weight: 400;
+    font-size: 14px;
+    color: grey;
+}
+.upload-img input{
+    display: none;
+}
+.prev-images{
+    display: flex;
+    margin: 20px 0px;
+    gap: 7px;
+}
+.prev-images img{
+    width: 60px;
+}
+.prev-images div{
+    position: relative;
+}
+.prev-images>div:hover svg{
+    visibility: visible;
+}
+.prev-images span{
+    position: absolute;
+    bottom: 12px;
+    color: white;
+    font-size: 12px;
+    background-color: rgb(14, 87, 232);
+    padding: 2px 5px;
+    transition: all 0.5s;
+    font-weight: 700;
+    display: flex;
+    place-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.prev-images svg{
+    position: absolute;
+    font-size: 14px;
+    top: -5px;
+    visibility: hidden;
+    right: -5px;
+    background-color: rgb(232, 232, 232);
+    border-radius: 50%;
+    border: 1px solid black;
+}
