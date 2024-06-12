@@ -21,7 +21,7 @@ const ImageModal = ({ modal, setModal }) => {
       ) : (
         <img crossOrigin='anonymous'
           className={modal ? "img-modal pop-bubble" : "img-modal"}
-          src={`${process.env.REACT_APP_SERVER}/${image}`}
+          src={image}
           alt="product"
         />
       )}

@@ -55,7 +55,7 @@ const Home = () => {
               <Carousel responsive={responsive}>
               {latest.map((el)=>(
                 <div onClick={()=>navigate(`/shop/${el._id}`)} className='product' key={el._id}>
-                    <img crossOrigin='anonymous' src={`${process.env.REACT_APP_SERVER}/${el.photo}`} />
+                    <img crossOrigin='anonymous' src={el.photo} />
                     <span className='price'>₹{el.price}</span>
                     <p>{el.name}</p>
                     <span>{el.category}</span>
