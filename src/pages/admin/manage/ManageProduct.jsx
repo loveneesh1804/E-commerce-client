@@ -134,7 +134,7 @@ const Manage = () => {
                 <div className='product-manage-info'>
                     <span style={{color : product.stock<0 ? "red" : null}}>{product.stock} {product.stock>0 ? "Available" : "Out of Stock"}</span>
                     <p>PRODUCT ID - {product._id}</p>
-                    <img crossOrigin='anonymous'  src={`${process.env.REACT_APP_SERVER}/${product.photo}`} alt="info" />
+                    <img crossOrigin='anonymous'  src={product.photo} alt="info" />
                     <div>
                         <h5>{product.name}</h5>
                         <h2>₹{product.price}</h2>

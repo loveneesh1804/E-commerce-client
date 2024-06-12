@@ -66,8 +66,8 @@ const Myorder = () => {
                   <div onClick={()=>navigate(`/order/${el._id}`)} key={el._id} className="order">
                   <div className='order-stack-img'>
                     {el.orderInfo.length>1 ? el.orderInfo.map((image,i)=>(
-                      <img key={i} crossOrigin='anyonmous' src={`${process.env.REACT_APP_SERVER}/${image.photo}`} alt="order" />
-                    )) : <img crossOrigin='anyonmous' src={`${process.env.REACT_APP_SERVER}/${el.orderInfo[0].photo}`} alt="order" />}
+                      <img key={i} crossOrigin='anyonmous' src={image.photo} alt="order" />
+                    )) : <img crossOrigin='anyonmous' src={el.orderInfo[0].photo} alt="order" />}
                   </div>
                   <div>
                     <span>Status <span style={{color : el.status==="Cancelled" ? "red" : el.status==="Shipped" ? "purple" : el.status==="Delivered" ? "green" : "#758696"}}>{el.status}</span></span>

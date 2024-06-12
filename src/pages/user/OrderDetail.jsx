@@ -114,7 +114,7 @@ const OrderDetail = () => {
                       {data ? data.orderInfo.map((el,i)=>(
                         <div key={i} className="invoice-item">
                         <div>
-                          <img crossOrigin='anyonymous' src={`${process.env.REACT_APP_SERVER}/${el.photo}`} alt="order" />
+                          <img crossOrigin='anyonymous' src={el.photo} alt="order" />
                             <div>
                             <b>{el.name}</b>
                             <span>₹ {el.price}</span>

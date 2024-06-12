@@ -95,7 +95,7 @@ const Manage = () => {
                     {data.orderInfo.map((el,i)=>(
                         <div className='order-manage' key={i}>
                         <div>
-                            <img crossOrigin='anyonymous' src={`${process.env.REACT_APP_SERVER}/${el.photo}`} alt="order" />
+                            <img crossOrigin='anyonymous' src={el.photo} alt="order" />
                             <div>
                                 <span>{el.name}</span>
                                 <span>Quantity : {el.quantity}</span>

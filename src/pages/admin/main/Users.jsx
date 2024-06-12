@@ -28,7 +28,7 @@ const Users = () => {
     setDelView(true);
   };
   const handleImage = (el) => {
-    localStorage.setItem("image-modal", `${process.env.REACT_APP_SERVER}/${el}`);
+    localStorage.setItem("image-modal",el);
     setModal(true);
   };
 
@@ -109,7 +109,7 @@ const Users = () => {
                         <img
                           crossOrigin="anonymous"
                           style={{ width: "50px", height: "50px" }}
-                          src={`${process.env.REACT_APP_SERVER}/${el.photo}`}
+                          src={el.photo}
                           alt="avatar"
                         />
                       </td>

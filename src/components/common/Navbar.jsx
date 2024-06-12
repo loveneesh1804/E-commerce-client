@@ -253,7 +253,7 @@ const Navbar = () => {
                   className="logo-main-navbar"
                   crossOrigin="anonymous"
                   onClick={() => navigate(`/my/${decode.id}`)}
-                  src={`${process.env.REACT_APP_SERVER}/${data.photo}`}
+                  src={data.photo}
                   alt="abc"
                 />
               ) : undefined

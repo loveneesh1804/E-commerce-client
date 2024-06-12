@@ -243,7 +243,7 @@ const My = () => {
                           onMouseEnter={() => setDel(true)}
                           className="logo-update-form"
                           crossOrigin="anonymous"
-                          src={`${process.env.REACT_APP_SERVER}/${details.photo}`}
+                          src={details.photo}
                           alt="abc"
                         />
                       ) : (

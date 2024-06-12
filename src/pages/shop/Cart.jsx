@@ -136,7 +136,7 @@ const Cart = () => {
                     {cart.length ? cart.map((el,i)=>(
                         <div key={i} className="bag-item">
                         <div>
-                            <img onClick={()=>navigate(`/shop/${el._id}`)} crossOrigin='anyonmous' src={`${process.env.REACT_APP_SERVER}/${el.photo}`} alt="bag" />
+                            <img onClick={()=>navigate(`/shop/${el._id}`)} crossOrigin='anyonmous' src={el.photo} alt="bag" />
                         </div>
                         <div className='content-item'>
                             <div className="name">

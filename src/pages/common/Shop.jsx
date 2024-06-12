@@ -201,7 +201,7 @@ const Shop = () => {
                       <img
                       style={{ width: !filter && "300px"}}
                       crossOrigin="anonymous"
-                      src={`${process.env.REACT_APP_SERVER}/${el.photo}`}
+                      src={el.photo}
                       alt="products"
                       onLoad={()=>(<Skeleton variant="rounded" width={230} height={345} />)}
                       />

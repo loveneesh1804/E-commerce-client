@@ -244,7 +244,7 @@ const ProductShop = () => {
               <div className="product-info-img">
                 <img
                   crossOrigin="anyonmous"
-                  src={`${process.env.REACT_APP_SERVER}/${product.photo}`}
+                  src={product.photo}
                   alt="product"
                   loading="lazy"
                 />
