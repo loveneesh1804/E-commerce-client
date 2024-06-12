@@ -30,7 +30,7 @@ const Cart = ({cart}) => {
             {cartData && cartData.map(el=>(
               <div className='pop-up-item'>
               <div>
-                <img crossOrigin='anyonmous' src={`${process.env.REACT_APP_SERVER}/${el.photo}`} alt="pop-up" />
+                <img crossOrigin='anyonmous' src={el.photo} alt="pop-up" />
               </div>
               <div>
                 <p>{el.name}</p>

@@ -103,7 +103,7 @@ const My = () => {
     if (name === details.name && dob === details.dob && !photo && phoneNo=== details.phoneNo) {
       return toast.error("Similar to Previous Data!");
     } 
-    if(phoneNo.length<10){
+    if(details.phoneNo!=="null" && phoneNo.length<10){
       return toast.error("Invalid Phone Number!")
     }
     else {
