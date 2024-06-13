@@ -113,7 +113,7 @@ const Navbar = () => {
                     <div>
                       <img
                         crossOrigin="anyonmous"
-                        src={`${process.env.REACT_APP_SERVER}/${el.photo}`}
+                        src={el.photo}
                         alt="pro-search"
                       />
                       <div>
