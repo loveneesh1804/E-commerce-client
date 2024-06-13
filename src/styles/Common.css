@@ -407,18 +407,26 @@
     font-size: 18px;
     text-transform: uppercase;
 }
+.cart-icon{
+    position: relative;
+}
+.cart-icon svg:hover{
+    background-color: rgb(242, 242, 242) ;
+    cursor: pointer;
+}
 .cart-item-qty{
     position: absolute;
     font-size: 11px;
-    border-radius: 50%;
-    height: 20px;
     font-weight: 700;
-    width: 20px;
     display: grid;
-    z-index: -1;
-    top: 9%;
-    right: 31.5%;
     place-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+}
+.cart-icon svg{
+    padding: 7px;
+    border-radius: 50%;
 }
 
 .size-select{

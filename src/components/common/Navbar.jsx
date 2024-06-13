@@ -138,17 +138,20 @@ const Navbar = () => {
           ) : undefined}
         </div>
         <div className="extra">
-          <ShoppingBagOutlinedIcon
-            className="bag-ico"
-            onMouseOver={() => setEmpty(true)}
-            onMouseLeave={() => setEmpty(false)}
-            onClick={() => {
-              navigate("/cart");
-            }}
-          />
-          {cart.length ? (
-              <span style={{right : data && "33.85%"}} className="cart-item-qty">{cart.reduce((acc,el)=>acc+=el.quantity,0)}</span>
+          <div onClick={() => {
+                navigate("/cart");
+              }} className="cart-icon">
+            <ShoppingBagOutlinedIcon
+              className="bag-ico"
+              onMouseOver={() => setEmpty(true)}
+              onMouseLeave={() => setEmpty(false)}
+            />
+            {cart.length ? (
+              <span className="cart-item-qty">
+                {cart.reduce((acc, el) => (acc += el.quantity), 0)}
+              </span>
             ) : undefined}
+          </div>
           <div
             style={{ visibility: empty && !cart.length ? "visible" : "hidden" }}
             className="empty-cart-pop"
@@ -257,7 +260,9 @@ const Navbar = () => {
                   alt="abc"
                 />
               ) : undefined
-            ) : user && !data ? <Skeleton variant="circular" width={38} height={38} /> : undefined}
+            ) : user && !data ? (
+              <Skeleton variant="circular" width={38} height={38} />
+            ) : undefined}
           </div>
         </div>
       </div>

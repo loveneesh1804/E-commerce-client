@@ -111,11 +111,8 @@ body{
     align-items: center;
     gap: 20px;
 }
-.extra>svg{
-    padding: 7px;
-    border-radius: 50%;
-}
-.extra>svg:hover{
+
+.cart-ico>svg:hover{
     background-color:rgb(242, 242, 242)  ;
 }
 .extra>div{
