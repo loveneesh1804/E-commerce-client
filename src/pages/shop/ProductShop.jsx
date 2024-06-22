@@ -429,7 +429,7 @@ const ProductShop = () => {
                       ) : (
                         <img
                           className="rev-img"
-                          src={`${process.env.REACT_APP_SERVER}/${el.photo}`}
+                          src={el.photo}
                           crossOrigin="anyonmous"
                           alt="rev"
                         />
