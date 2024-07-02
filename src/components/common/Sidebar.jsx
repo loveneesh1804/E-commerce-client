@@ -1,14 +1,88 @@
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import SecurityIcon from '@mui/icons-material/Security';
+import SettingsIcon from '@mui/icons-material/Settings';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import ExtensionIcon from '@mui/icons-material/Extension';
+import SellIcon from '@mui/icons-material/Sell';
+import { jwtDecode } from 'jwt-decode';
+import { useSelector } from 'react-redux';
+import {useLocation, useNavigate} from "react-router-dom";
 
-const Sidebar = ({view}) => {
+const MobileSidebar = ({view}) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const user = useSelector(state=>state.user.user);
+    if(user){
+        var decode = jwtDecode(user.token);
+    }
+    
   return (
     <div onClick={(e)=>e.target.className==="main-sidebar" && view.setViewSide(!view.viewSide)} className='main-sidebar' style={{visibility : view.viewSide ? "visible" : "hidden"}}>
         <div className={view.viewSide ? "sidebar show-side-bar" : "sidebar"}>
             <div className='sidebar-icon'>
                 <CloseIcon onClick={()=>view.setViewSide(!view.viewSide)} />
             </div>
-            <div className='sidebar-content'>
+            {user ? <div className="sidebar-content">
+                <ul>
+                    <h2>MENU</h2>
+                    <li style={{
+                            fontWeight:
+                                location.pathname.includes(`/my/${decode.id}`) && "600",
+                            backgroundColor:
+                                location.pathname.includes(`/my/${decode.id}`) && "rgb(247,247,247)",
+                            }} onClick={()=>navigate(`/my/${decode.id}`)}>
+                        <SettingsIcon />
+                        <span>Account Details</span>
+                    </li>
+                    <li style={{
+                        fontWeight:
+                            location.pathname.includes(`/my/password/${decode.id}`) && "600",
+                        backgroundColor:
+                            location.pathname.includes(`/my/password/${decode.id}`) && "rgb(247,247,247)",
+                        }}  onClick={()=>navigate(`/my/password/${decode.id}`)} >    
+                        <SecurityIcon />
+                        <span>Security</span>
+                    </li>
+                    <li style={{
+                            fontWeight:
+                                location.pathname.includes(`/my/orders/${decode.id}`) && "600",
+                            backgroundColor:
+                                location.pathname.includes(`/my/orders/${decode.id}`) && "rgb(247,247,247)",
+                            }}  onClick={()=>navigate(`/my/orders/${decode.id}`)} >
+                        <WidgetsIcon />
+                        <span>Orders</span>
+                    </li>
+                    <li style={{
+                            fontWeight:
+                                location.pathname.includes(`/my/app/${decode.id}`) && "600",
+                            backgroundColor:
+                                location.pathname.includes(`/my/app/${decode.id}`) && "rgb(247,247,247)",
+                            }}  onClick={()=>navigate(`/my/app/${decode.id}`)} >
+                        <ExtensionIcon />
+                        <span>App</span>
+                    </li>
+                    <li style={{
+                            fontWeight:
+                                location.pathname.includes("/sell") && "600",
+                            backgroundColor:
+                                location.pathname.includes("/sell") && "rgb(247,247,247)",
+                            color : "#e32b2b",fontWeight : 800
+                            }}  onClick={()=>navigate("/sell")} >
+                        <SellIcon />
+                        <span className='red'>Sell with us</span>
+                    </li>
+                </ul>
+            </div> : undefined}
+        </div>
+    </div>
+  )
+}
+
+export default MobileSidebar;
+
+{/* <div className='sidebar-content'>
                 <ul>
                     <h2>Shop By Category</h2>
                     <li><span>Footwear</span></li>
@@ -56,10 +130,4 @@ const Sidebar = ({view}) => {
                     <li><span>Women's All Sustainable</span></li>
                 </ul>
                 
-            </div>
-        </div>
-    </div>
-  )
-}
-
-export default Sidebar
+</div> */}

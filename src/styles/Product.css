@@ -499,3 +499,126 @@ input:disabled{
 .pin:hover{
     background-color: rgb(237, 237, 237);
 }
+
+@media screen and (min-width: 300px) and (max-width: 900px){
+    .main-products-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 320px;
+    }
+    .main-product{
+        padding: 4px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        height: 320px;
+    }
+    .main-product>img{
+        width: 170px;
+    }
+    .main-product>p{
+        font-size: 9px;
+    }
+    .main-product>span{
+        bottom: 18%;
+        font-size: 11px;
+    }
+    .main-product>h6{
+        font-size: 7px;
+    }
+    .page-shop{
+        bottom: 30px;
+    }
+    .page-shop>span{
+        font-size: 12px;
+    }
+    .page-shop>button{
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    /* //////////////////////////////// */
+
+
+    .product-info{
+        padding: 10px 15px;
+        width: 98%;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .pro-stock{
+        right: 5px;
+    }
+    .product-info-img>img{
+        width: 370px;
+    }
+    .product-info-details{
+        width: 98%;
+        padding: 10px 15px;
+    }
+    .para{
+        margin-bottom: 5px !important;
+    }
+    .product-info-details>section{
+        flex-direction: column;
+        margin-top: 6px;
+    }
+    .product-info-details>button{
+        padding: 10px 20px;
+        margin-top: 25px;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .product-rating{
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        width: 98%;
+    }
+    .rating{
+        width: 98%;
+        padding: 10px 15px;
+        height: 280px;
+        padding-bottom: 0px;
+    }
+    .comments{
+        width: 98%;
+    }
+    .star-rating>svg{
+        font-size: 30px;
+        margin-right: -12px;
+    }
+    .rating-star-box{
+        gap: 20px;
+        margin-left: -5px;
+    }
+    .gap{
+        margin: 8px 0px;
+    }
+    .rating-percent{
+       margin: 10px 15px;
+    }
+    .review{
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .comment-content{
+        font-size: 12px;
+        width: 100%;
+    }
+    .comment-content>h4{
+        margin: 4px 0px;
+        margin-bottom: -5px;
+        font-size: 14px;
+    }
+    .comment-content>span{
+        font-size: 10px;
+        color: grey;
+    }
+    .comment-content>p{
+        font-size: 12px;
+    }
+    .publish-review textarea{
+        width: 300px !important;
+    }
+}

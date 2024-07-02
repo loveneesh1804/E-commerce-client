@@ -12,22 +12,34 @@ const Banner = () => {
   const [count,setCount] = useState(0);
 
   useEffect(()=>{
-    let id = setInterval(()=>{
-      if(i===1){
-        setRight(120);
-        setCount(40);
-      }
-      else if(i===2){
-        setRight(prev=>prev+120);
-        setCount(prev=>prev+40);
-      }
-      else if(i===3){
-        setRight(0);
-        setCount(0);
-      }
-      if(i===4) i=1;
-      else i++;
-    },8000)
+      var id = setInterval(()=>{
+        if(i===1){
+            if(window.innerWidth>1200){
+              setRight(910);
+              setCount(303);
+            }
+            else{
+              setRight(400);
+              setCount(133);
+            }
+        }
+        else if(i===2){
+            if(window.innerWidth>1200){
+              setRight(prev=>prev+910);
+              setCount(prev=>prev+303);
+            }
+            else{
+              setRight(prev=>prev+400);
+              setCount(prev=>prev+133);
+            }
+        }
+        else if(i===3){
+          setRight(0);
+          setCount(0);
+        }
+        if(i===4) i=1;
+        else i++;
+      },8000)
     return ()=>clearInterval(id);
   },[right])
 
@@ -35,7 +47,7 @@ const Banner = () => {
    <>
     <div className="main-banner">
         <div className="banner-carousel">
-          <div style={{right : `${right}vh`}} className='banner-box'>
+          <div style={{right : `${right}px`}} className='banner-box'>
             <div className="banner">
               <img src={model1} alt="model" />
               <div className="banner-content">
@@ -74,7 +86,7 @@ const Banner = () => {
         </div>
     </div>
     <div className="carousel-scroll">
-      <div style={{left : `${count}vh`}} className='scroller'></div>
+      <div style={{left : `${count}px`}} className='scroller'></div>
     </div>
    </>
   )

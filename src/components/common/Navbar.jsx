@@ -90,7 +90,7 @@ const Navbar = () => {
     <>
       <div className="navbar">
         <div className="logo">
-          <MenuIcon onClick={() => setViewSide(!viewSide)} />
+          {user ? <MenuIcon onClick={() => setViewSide(!viewSide)} /> : undefined}
           <h1 onClick={() => navigate("/")}>
             Wisd<span style={{ color: "red" }}>Φ</span>m
           </h1>
@@ -238,7 +238,9 @@ const Navbar = () => {
                     <span onClick={() => navigate("/signup")}>Sign Up</span>
                   </>
                 ) : (
-                  <span onClick={handleLogout}>Logout</span>
+                  <>
+                    <span onClick={handleLogout}>Logout</span>
+                  </>
                 )}
               </div>
             </span>

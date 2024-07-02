@@ -27,6 +27,8 @@ const My = () => {
   const [showDel, setDel] = useState();
   const [confirm, setConfrim] = useState();
 
+  const [isMobile,setIsMobile] = useState();
+
   if (user) {
     var decode = jwtDecode(user.token);
   }
@@ -46,6 +48,7 @@ const My = () => {
   ];
 
   useEffect(() => {
+    window.innerWidth<1200 && setIsMobile(true);
     if (!user) {
       return navigate("/");
     }
@@ -297,11 +300,11 @@ const My = () => {
                 <div>
                   <div>
                     <label>Name</label>
-                    <Skeleton variant="rounded" width={601} height={45} />
+                    <Skeleton variant="rounded" width={isMobile ? 204 : 601} height={45} />
                   </div>
                   <div>
                     <label>Date of Birth</label>
-                    <Skeleton variant="rounded" width={601} height={45} />
+                    <Skeleton variant="rounded" width={isMobile ? 204 : 601} height={45} />
                   </div>
                 </div>
 
@@ -320,7 +323,7 @@ const My = () => {
               </div>
               <div className="phone-input">
                 <label>Phone Number</label>
-                <Skeleton variant="rounded" width={860} height={45} />
+                <Skeleton variant="rounded" width={isMobile ? 385 : 860} height={45} />
               </div>
             </form>
             <div>

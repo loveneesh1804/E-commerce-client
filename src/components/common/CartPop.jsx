@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import {useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Cart = ({cart}) => {
 
   const cartData = useSelector(state=>state.cart);
   const navigate = useNavigate();
-  const [hovered,setHovered] = useState();
+  // const [hovered,setHovered] = useState();
 
-  const closeModal=()=>{
-    let id = setTimeout(()=>{
-      !hovered && cart.setCart(false);
+  // const closeModal=()=>{
+  //   let id = setTimeout(()=>{
+  //     !hovered && cart.setCart(false);
 
-      return ()=>clearTimeout(id);
-    }
-    ,5000)
-  }
+  //     return ()=>clearTimeout(id);
+  //   }
+  //   ,5000)
+  // }
 
-  hovered ? cart.setCart(true) : closeModal();
+  // hovered ? cart.setCart(true) : closeModal();
+  // onMouseOver={()=>setHovered(true)} onMouseOut={()=>setHovered(false)}
 
   return (
     <div onClick={(e)=>e.target.className === "cart" && cart.setCart(false)} className='cart' style={{visibility : cart.cart ? "visible" : "hidden"}}>
-        <div onMouseOver={()=>setHovered(true)} onMouseOut={()=>setHovered(false)} className={ cart.cart ? "main-cart slide-cart" : "main-cart"}>
+        <div  className={ cart.cart ? "main-cart slide-cart" : "main-cart"}>
             <div className='close-cart'>
                 <h2>Cart Info</h2>
-                {/* <CloseIcon onClick={()=>cart.setCart(false)} /> */}
+                <CloseIcon onClick={()=>cart.setCart(false)} />
             </div>
             {cartData && cartData.map(el=>(
               <div className='pop-up-item'>

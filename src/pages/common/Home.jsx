@@ -15,14 +15,22 @@ const responsive = {
     breakpoint: { max: 3000, min: 1024 },
     items: 4,
     slidesToSlide: 4
+  },
+  mobile: {
+    breakpoint: { max: 1000, min: 0 },
+    items: 3,
+    slidesToSlide: 3
   }
 };
 
 const Home = () => {
   const navigate = useNavigate();
   const [latest,setLatest] = useState();
+  const [isMobile,setIsMobile] = useState(false);
 
   useEffect(()=>{
+    window.innerWidth<1200 && setIsMobile(true);
+    console.log(window.innerWidth)
     async function fetchProducts(){
       try{
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/product/latest`);
@@ -68,9 +76,9 @@ const Home = () => {
                <div className='skeleton-product'>
                   {new Array(4).fill(0).map(()=>(
                   <div>
-                    <Skeleton variant="rounded" width={250} height={380} />
-                    <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={150} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={100} />
+                    <Skeleton variant="rounded" width={isMobile ? 130 : 250} height={isMobile ? 200 : 380} />
+                    <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={isMobile ? 120 : 150} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={isMobile ? 50 : 100} />
                   </div>
                 ))}
                </div>

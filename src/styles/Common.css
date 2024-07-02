@@ -13,7 +13,6 @@
 }
 .main-wrap{
     width: 70%;
-
 }
 .filter-shop{
     width: 15%;
@@ -32,7 +31,6 @@
 }
 .filter-shop>h4{
     margin: 0px;
-
 }
 .main-shop{
     display: flex;
@@ -713,4 +711,351 @@ select:focus{
 .agreement{
     width: 300px;
     margin: auto;
+}
+
+
+
+@media screen and (min-width: 300px) and (max-width: 900px){
+    .shop>div{
+        margin: 10px 0px;
+    }
+    .shop{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .filter-shop{
+        position: relative;
+        width: 95%;
+        height: 32vh ;
+        padding: 10px 15px;
+        position: relative;
+        left: 10px;
+    }
+    .filter-shop>h2{
+        font-size: 17px;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+    .filter-shop h4{
+        font-size: 12px;
+    }
+    .sort-tab-by p{
+        font-size: 12px !important;
+    }
+    .sort-tab-by{
+        padding: 2px;
+        margin: 2px 0px;
+    }
+    .sort-tab-by>div{
+        top: 45px;
+        left: 0px;
+    }
+    .range-sort>h4{
+        margin: 5px 0px 0px 0px;
+        padding-bottom: 0px;
+    }
+    .range-sort>input{
+        margin: 0px;
+    }
+    .range-sort span{
+        font-size: 12px !important;
+    }
+    .shop-cat-sort>h4{
+        padding: 0px 0px 5px 0px;
+    }
+    .love{
+        padding-top: 2px !important ;
+        padding-bottom: 2px !important;
+        margin: 2px 0px;
+    }
+    .love>div{
+        top: 45px !important;
+        left: 0px !important;
+    }
+    .love p{
+        margin: 10px 0px;
+        font-size: 12px !important;
+    }
+    .main-wrap{
+        width: 95%;
+        margin: auto !important;
+    }
+    .main-shop{
+        gap: 10px;
+        float: none;
+        right: 0;
+        min-width: 100%;
+    }
+    .sort-tab{
+        padding: 10px 15px;
+        gap: 20px;
+    }
+    .sort-tab span{
+        font-size: 12px;
+    }
+    .sort-tab p{
+        font-size: 12px;
+        margin: 0px;
+    }
+    .total-product{
+        width: 80%;
+    }
+    .hide-sort{
+        display: none;
+    }
+    .main-items{
+        padding: 10px 15px;
+        gap: 0px;
+        width: 100%;
+        padding-bottom: 6rem;
+        margin-bottom: 20px;
+    }
+    .main-items>h2{
+        font-weight: 600;
+        margin: 5px 0px;
+        font-size: 17px;
+    }
+
+    /* ///////////////////////////////// */
+
+    .size-select{
+        width: 100%;
+    }
+    .size-select>div>p{
+        margin: 0px;
+        font-size: 12px;
+    }
+    .icons{
+        margin-top: 20px !important;
+    }
+
+    /* ??????????????????????????? */
+    .bag-box{
+        flex-direction: column;
+        gap: 0px;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+    .bag-box h2{
+        font-weight: 600;
+    }
+    .bag{
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .summary-bag{
+        padding: 10px 15px;
+        width: 100%;
+    }
+    .empty-bag{
+        margin: 30px 0px;
+        font-size: 30px;
+    }
+    .bag-item img{
+        width: 80px;
+    }
+    .bag-item-box>div:not(:first-child){
+        padding-top: 20px;
+    }
+    .bag-item{
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+    .bag-item>div:last-child{
+        width: 80%;
+        padding: 5px;
+    }
+    .name{
+        display: flex;
+        font-size: 12px;
+        justify-content: space-between;
+    }
+    .name strong{
+        font-size: 13px;
+        width: 180px;
+    }
+    .content-item{
+        gap: 5px;
+    }
+    .content-item span{
+        font-size: 13px;
+    }
+    .selection-tab{
+        display: flex;
+        gap: 50px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .selection-tab select{
+        font-size: 13px;
+        width: 60px;
+    }
+    .content-item>div:last-child{
+        margin-top: -2px;
+        display: flex;
+        gap: 8px;
+    }
+    .content-item>div:last-child>svg{
+        font-size: 35px;
+        padding: 5px;
+    }
+    .content-item>div:last-child>svg:first-child{
+        color: red;
+    }
+
+    /* //////////////////////////////////////// */
+
+    .shipping{
+        padding: 10px 15px;
+    }
+    .shipping-form{
+        width: 98%;
+    }
+    .shipping-form>h2{
+        padding: 5px 0px;
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+    .shipping-form>form{
+        padding: 0px;
+    }
+    .shipping-form>form>div:first-child{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0.8rem 0rem;
+    }
+    .shipping-form label{
+        padding-bottom: 2px;
+        font-size: 12px;
+    }
+    .shipping-form textarea{
+        padding: 10px;
+        font-size: 12px;
+        height: 70px;
+    }
+    .shipping-form textarea::placeholder{
+        font-size: 12px;
+    }
+    .shipping-form>form>div:not(:first-child){
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        margin: 1rem 0rem;
+    }
+    .shipping-form>form>div>div{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        width: 100%;
+    }
+    .shipping-form input{
+        padding: 10px;
+        font-size: 12px;
+    }
+    .shipping-form input::placeholder{
+        font-size: 12px;
+    }
+    .shipping-form button{
+        padding: 10px 20px;
+        font-size: 12px;
+        margin: 15px 0px 10px 0px;
+    }
+    /* //////////////////////////////// */
+
+    .sell{
+        width: 100%;
+        
+    }
+    
+    .sell-with-us{
+        width: 98%;
+        padding: 10px 15px;
+    }
+    .sell-with-us>h2{
+        font-size: 15px;
+        padding-bottom: 12px;
+    }
+    .sell-form{
+        gap: 10px;
+        width: 100%;
+    }
+    .sell-box{
+        width: 100%;
+        flex-direction: column;
+    }
+    .sell-banner{
+        width: 100%;
+    }
+    
+    .sell-form input{
+        border:  1px solid rgb(230, 230, 230);
+        padding: 12px 15px;
+    }
+    .sell-form input::placeholder{
+        font-size: 12px;
+    }
+    .sell-form label{
+        font-size: 12px;
+    }
+    .sell-form>div>textarea{
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    .sell-form>button{
+        padding: 12px 0px;
+        width: 30%;
+        font-size: 12px;
+        margin-bottom:15px;
+    }
+    .agreement{
+        width: 300px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    /* //////////////////////////////// */
+
+    .pop-up-item{
+        display: flex;
+        gap: 10px;
+        padding: 5px 7px;
+    }
+    .pop-up-item>div>img{
+        width: 60px;
+    }
+    .pop-up-item>div>p{
+        margin: 1px 0px;
+        font-size: 11px;
+    }
+    .pop-up-item>div>span{
+        font-weight: 600;
+    }
+    .go-to-cart{
+        width: 60%;
+    }
+    .go-to-cart>button{
+        width: 80%;
+        background-color: black;
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        font-size: 15px;
+        font-weight: 800;
+        border-radius: 5px;
+        transition: all 0.7s;
+    }
+
+    /* //////////////////////////// */
+
+    .not-found>span{
+        font-size:100px;
+        margin: 0px;
+        margin-top: 50%;
+        color: grey;
+    }
+    .not-found>b{
+        font-size: 50px;
+        margin-top: -40px;
+    }
 }

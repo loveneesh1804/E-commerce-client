@@ -25,13 +25,15 @@ const Shop = () => {
   const [totalProducts,setTotalProducts] = useState(0);
   const [totalCategory,setTotalCategory] = useState(0);
 
+  const [isMobile,setIsMobile] = useState(false);
+
   const isPrevPage = currentPage>1;
   const isNextPage = currentPage<page;
 
   const navigate = useNavigate();
 
   useEffect(() => {
-
+    window.innerWidth<1200 && setIsMobile(true);
     async function fetchData() {
       try {
         let baseQuery = `?page=${currentPage}`
@@ -89,9 +91,6 @@ const Shop = () => {
     fetchCategory();
   }, [variety,sort,price,currentPage]);
 
-  // const handleImageLoading=()=>(
-  //   <Skeleton variant="rounded" width={230} height={345} />
-  // )
 
   return (
     <div
@@ -203,7 +202,6 @@ const Shop = () => {
                       crossOrigin="anonymous"
                       src={el.photo}
                       alt="products"
-                      onLoad={()=>(<Skeleton variant="rounded" width={230} height={345} />)}
                       />
 
                       <span style={{ bottom: !filter && "17%" }}>
@@ -223,12 +221,12 @@ const Shop = () => {
               </div>
               }
             </div> : 
-              <div className="skeleton-shop">
+              <div className="skeleton-shop" style={{marginBottom : "20px"}}>
                 <h2>Products</h2>
                 <div className='skeleton-product-grid'>
                   {new Array(15).fill(0).map(()=>(
-                  <div >
-                    <Skeleton variant="rounded" width={230} height={345} />
+                  <div>
+                    <Skeleton variant="rounded" width={isMobile ? 175 : 230} height={isMobile ? 255 :345} />
                     <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={150} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={100} />
                   </div>

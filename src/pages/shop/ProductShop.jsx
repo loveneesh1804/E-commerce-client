@@ -39,6 +39,8 @@ const ProductShop = () => {
 
   const [userData,setUserData] = useState();
 
+  const [isMobile,setIsMobile] = useState(false);
+
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart);
 
@@ -63,6 +65,7 @@ const ProductShop = () => {
   }
 
   useEffect(() => {
+    window.innerWidth<1200 && setIsMobile(true);
     if (user) {
       var decode = jwtDecode(user.token);
       const fetchUser = async()=>{
@@ -259,7 +262,7 @@ const ProductShop = () => {
                 <h2>{product.name}</h2>
                 <p>{product.category}</p>
                 <h4>See more from Wisdom</h4>
-                <p style={{ fontSize: "13px", marginBottom: "20px" }}>
+                <p className="para" style={{ fontSize: "13px", marginBottom: "20px" }}>
                   This fibre is produced using no artificial fertilisers or
                   pesticides and is grown from seeds that have not been
                   genetically modified. We are currently working with the
@@ -495,19 +498,19 @@ const ProductShop = () => {
         ) : <>
         <div className="product-info">
               <div className="product-info-img">
-                <Skeleton variant="rounded" width={340} height={510} />
+                <Skeleton variant="rounded" width={isMobile ? 370 :340} height={isMobile ? 555 : 510} />
               </div>
-              <div className="product-info-details">
+              <div style={{marginTop : "5px"}} className="product-info-details">
                 <Skeleton variant="rounded" width={300} height={30} />
                 <Skeleton variant="rounded" style={{marginTop:"5px"}} width={80} height={15} />
                 <Skeleton variant="rounded" style={{marginTop:"25px",marginBottom:"4px"}} width={200} height={20} />
-                <Skeleton variant="rounded" width={582} height={100} style={{marginBottom : "20px"}} />
+                <Skeleton variant="rounded" width={isMobile ? 340 : 582} height={100} style={{marginBottom : "20px"}} />
                 <Skeleton variant="rounded" width={97} height={36} />
 
 
                 <section>
                     <Skeleton style={{marginTop : "4px"}} variant="rounded" width={50} height={11} />
-                    <Skeleton style={{marginTop : "4px"}} variant="rounded" width={565} height={48} />
+                    <Skeleton style={{marginTop : "4px"}} variant="rounded" width={isMobile ? 340 : 565} height={48} />
                 </section>
 
 
@@ -551,7 +554,7 @@ const ProductShop = () => {
                       <div className="comment-content">
                         <Skeleton width={100} height={18} variant="rounded" />
                         <Skeleton width={150} style={{margin : "4px 0px"}} height={10} variant="rounded" />
-                        <Skeleton width={500} height={80} variant="rounded" />
+                        <Skeleton width={isMobile ? 340 : 500} height={80} variant="rounded" />
                       </div>
                       
                     </div>

@@ -18,6 +18,7 @@
 @import url("./User.css");
 
 
+
 body{
     margin: 0px;
     padding: 0px;
@@ -53,12 +54,11 @@ body{
     justify-content: center;
     background-color: white;
     position: absolute;
-    top: -300px;
+    top: -500px;
     gap: 20px;
     padding-top: 20px;
     padding-bottom: 100px;
-    transition: top 0.7s ease;
-    
+    transition: top 0.7s ease; 
 }
 .slide{
     top: 0px;
@@ -84,7 +84,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 100px;
     padding: 15px;
     border-bottom: 1px solid rgb(230, 230, 230);
 }
@@ -145,7 +145,7 @@ body{
     
 }
 .sidebar{
-    width: 60%;
+    width: 20%;
     background-color: white;
     height: 100%;
     position: absolute;
@@ -160,13 +160,20 @@ body{
 .show-side-bar{
     left: 0px;  
 }
-.sidebar-content{
-    display: flex;
-    gap: 40px;
+.sidebar h2{
+    margin: 20px 0px 10px 25px ;
+}
+.sidebar ul{
+    padding: 0px;
+    width: 80%;
 }
 .sidebar-content>ul>li{
     border-bottom: 3px solid transparent;
-    padding: 4px;
+    padding: 12px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .sidebar-icon{
     display: flex;
@@ -185,12 +192,23 @@ body{
 .sidebar-content>ul{
     list-style: none;
 }
-.sidebar-content>ul>li>span:hover{
+/* .sidebar-content>ul>li>span:hover{
     border-bottom: 3px solid black;
     cursor: pointer;
 }
 .sidebar-content>ul .red:hover{
     border-bottom: 3px solid #e32b2b;
+} */
+
+.sidebar-content>ul>li:hover{
+    background-color: rgb(247,247,247);
+    cursor: pointer;
+    font-weight: 600;
+}
+.red:hover{
+    background-color: rgb(247,247,247);
+    cursor: pointer;
+    font-weight: 900;
 }
 
 .rotate>svg {
@@ -276,8 +294,8 @@ body{
 
 
 .banner-carousel{
-    width: 120vh;
-    height: 68vh;
+    width: 910px;
+    height: 510px;
     overflow: hidden;
     position: relative;
     margin: auto;
@@ -287,19 +305,19 @@ body{
 }
 .banner-box{
     display: flex;
-    width: 120vh;
-    right: 680px;
+    width: 910px;
+    right: 510px;
     transition: all 0.5s;
     position: absolute;
 }
 .banner img,.banner{
-    width: 120vh;
+    width: 910px;
 }
 .banner{
     position: relative;
 }
 .carousel-scroll{
-    width: 120vh;
+    width: 910px;
     height: 2px;
     background-color: rgb(236, 236, 236);
     margin: auto;
@@ -309,7 +327,7 @@ body{
 }
 .scroller{
     position: absolute;
-    width: 40vh;
+    width: 303px;
     height: 2px;
     background-color: black;
     transition: all 0.5s;
@@ -877,4 +895,400 @@ body{
     font-size: 100px;
     color: rgb(32, 32, 32);
 }
-@import url('./media.css');
+
+
+
+
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+    *{
+        box-sizing: border-box;
+    }
+    .black-header{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .black-header p{
+        font-size: 12px;
+    }
+    .black-header p>svg{
+        font-size: 18px;
+    }
+    .header-info{
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 50px 0px;
+    }
+    .header-info p{
+        font-size: 10px;
+    }
+    .header-info h2{
+        font-size: 14px;
+    }
+    .header-info>div{
+        width: 80%;
+    }
+    .header-info svg{
+        top: 15px;
+        right: 15px;
+    }
+    .navbar{
+       align-items: center;
+       justify-content: space-between;
+       gap: 10px;
+    }
+    .logo{
+        gap: 5px;
+    }
+    .logo>h1{
+        font-weight: 500;
+        margin: 0px;
+        font-size: 20px;
+    }
+    .logo>svg{
+        font-size: 25px;
+        padding: 2px;
+    }
+    .search{
+        display: none;
+    }
+    .extra{
+        gap: 5px;
+    }
+    .extra span{
+        font-size: 10px;
+    }
+    .content>span{
+        font-size: 11.5px;
+    }
+    .content svg{
+        font-size: 12px;
+    }
+    .extra>div{
+        gap: 8px;
+        align-items: center;
+    }
+    .banner-carousel{
+        width: 400px;
+        height: 280px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .banner-box{
+        display: flex;
+        width: 400px;
+        height: 280px;
+        transition: all 0.5s;
+        position: absolute;
+    }
+    .banner img,.banner{
+        width: 400px;
+    }
+    .carousel-scroll{
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    .scroller{
+        width: 133px;
+    }
+
+
+    .banner-content>h1{
+        font-size: 16px ;
+        margin: 0px;
+        margin-bottom: -10px;
+    }
+    .banner-content>span{
+        font-size: 10px;
+    }
+    .banner-content>button{
+        padding: 6px 14px;
+        font-size: 10px;
+        border: 1px solid white;
+        margin-top: 0px;
+    }
+    .banner-content>button>svg{
+        font-size: 12px;
+    }
+    .banner-content{
+        top: 160px;
+        left: 10px;
+    }
+    .banner img{
+        width: 400px;
+        height: 280px;
+    }
+    .bannerImg{
+        top: 40px;
+        height: 280px;
+    }
+    .bannerImg p{
+        font-size: 12px;
+    }
+    .bannerImg h3{
+        font-size: 30px;
+        margin: 0px;
+        margin-top: -7px;
+        margin-bottom: 5px;
+        font-weight: 900;
+    }
+    .buttons{
+        margin-top: 100px;
+    }
+    .buttons p{
+        font-size: 8px;
+        font-weight: 600;
+    }
+    .buttons button{
+        padding: 8px 10px;
+        font-size: 10px;
+        margin: 0px 1px;
+        margin-bottom: 5px;
+    }
+
+    .footer{
+        gap: 10px;
+        padding: 10px 20px 10px 40px;
+    }
+    .footer>div{
+        padding: 20px 50px 20px 20px;
+    }
+    .footer>div:nth-child(2){
+        border: none;
+    }
+    .footer>div>h5 , .footer>div>p{
+        margin: 0px;
+        font-size: 10px;
+    }
+    .footer h5{
+        font-size: 12px;
+        padding-bottom: 20px;
+    }
+    .footer p{
+        font-size: 10px;
+        padding: 3px 0px;
+    }
+    .footer>div:last-child{
+        display: none;
+    }
+    .newsletter{
+        display: none;
+    }
+    .foot-info{
+        font-size: 8px;
+        margin-top: 10px;
+    }
+    .foot-icon{
+        margin-bottom: 20px;
+        gap: 3px;
+    }
+    .foot-icon>img{
+        width: 25px;
+    }
+
+    .latetst-products{
+        width: 98%;
+        padding-bottom: 20px;
+    }
+    .latetst-products-head>h2{
+        font-size: 18px;
+    }
+    .latetst-products-head>span{
+        font-size: 10px;
+    }
+    .product{
+        font-size: 10px;
+        position: relative;
+        height: 250px;
+    }
+    .product>img{
+        width: 130px;
+        border-radius: 10px;
+    }
+    .product>p{
+        font-size: 10px;
+    }
+    .product>p+span{
+        font-size: 8px;
+    }
+    .price{
+        bottom: 55px;
+        left: 6px;
+    }
+    .heart-ico{
+        top: 8px;
+        right: 10px;
+        font-size: 14px !important;
+    }
+    .welcome{
+        top: 32px;
+        left: 70px;
+        width: 80px;
+        padding: 3px;
+    }
+    .welcome>span{
+        padding: 6px;
+        font-size: 10px;
+    }
+    .bag-ico{
+        font-size: 30px !important;
+    }
+    .cart-item-qty{
+        font-size: 7px !important;
+    }
+    .inner-brand{
+        width: 260px;
+        left: -180px;
+        padding: 0px 10px;
+    }
+    .inner-brand>div:first-child{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgb(230, 230, 230) ;
+    }
+    .inner-brand>div:first-child>h2{
+        font-size: 12px;
+    }
+    .inner-brand>div:first-child>span{
+        font-size: 10px;
+    }
+    .inner-brand>div:nth-child(2){
+        display: flex;
+        gap: 24px;
+    }
+    .inner-brand>div:nth-child(2) ul{
+        padding: 8px;
+        list-style: none;
+    }
+    .inner-brand>div:nth-child(2) li{
+        padding: 4px;
+        font-size: 9px;
+    }
+    /* ////////////////////////////////////// */
+
+    .signup{
+        width: 94%;
+        padding: 10px 0px;
+    }
+    .signup>h1{
+        padding-bottom: 7px;
+        font-size: 18px;
+    }
+    .signup-content{
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .signup-form p{
+        margin: 10px 0px 5px 0px;
+        font-size: 12px;
+    }
+    .signup-icon>button>img{
+        width: 30px;
+    }
+    .signup-icon{
+        padding: 30px 0px 10px 0px;
+    }
+    .visibility{
+        top: 28px;
+    }
+    .signup-form input{
+        padding: 9px 12px;
+        width: 340px;
+        font-size: 12px;
+    }
+    .signup>div>input[type = "checkbox"]{
+        width: 12px;
+        height: 12px;
+    }
+    .signup-content+div{
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .sign-but{
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .sign-but>button{
+        padding: 0px 25px;
+        height: 35px;
+        font-size: 12px;
+    }
+    .sign-but>p{
+        font-size: 12px;
+    }
+    .signup-personal{
+        padding: 10px;
+        margin-top: 20px;
+        width: 340px;
+        padding-bottom: 15px;
+    }
+    .legend{
+        top: -125px;
+        font-size: 12px;
+    }
+    .signup-personal>p{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    .signup-personal>input{
+        padding: 9px 12px;
+        width: 99%;
+        font-size: 12px;
+    }
+    .gender-select{
+        padding: 9px 12px;
+        width: 99%;
+    }
+    .gender-select>p{
+        font-size: 12px;
+    }
+    .gender-select>div>p{
+        font-size: 12px;
+    }
+
+    /* /////////////////////////////// */
+
+    .main-cart{
+        width: 60%;
+        padding: 5px;
+    }
+    .close-cart>h2{
+        margin-left: 5px;
+        font-size: 18px;
+    }
+    .close-cart>svg{
+        font-size: 30px;
+        padding: 0px;
+        margin-right: 0px;
+    }
+    .sidebar{
+        width: 60%;
+        padding: 10px 15px; 
+    }
+    .sidebar ul{
+        padding: 0px;
+        width: 100%;
+    }
+    
+    /* ////////////////////////// */
+    .loader>div{
+        width: 20%;
+        border-radius: 5px;
+        padding: 0px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    
+}

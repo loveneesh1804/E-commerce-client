@@ -488,3 +488,29 @@ code>span{
     border-radius: 50%;
     border: 1px solid black;
 }
+
+@media screen and (min-width: 300px) and (max-width: 900px){
+    .skeleton-product{
+        gap: 5px;
+    }
+    .skeleton-product-grid{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 320px;
+        column-gap: 5px;
+        row-gap: 30px;
+    }
+    .skeleton-shop{
+        padding: 10px 15px 96px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .skeleton-shop>h2{
+        font-weight: 600;
+        margin: 5px 0px;
+        font-size: 17px;
+    }
+    
+}

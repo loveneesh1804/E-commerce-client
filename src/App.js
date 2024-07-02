@@ -39,7 +39,6 @@ function App() {
     <Router>
       <Suspense fallback={<Loader />}>
         <Routes>
-
           {/* Comman Routes */}
 
           <Route path='/' element={<Home />} />

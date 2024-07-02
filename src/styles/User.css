@@ -474,3 +474,191 @@
 .confirm-cancel>button:hover{
     opacity: 0.8;
 }
+
+@media screen and (min-width: 300px) and (max-width: 900px){
+    .my{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 0px;
+    }
+    .my>main{
+        width: 100%;
+    }
+    .user-sidebar>div{
+        display: none;
+    }
+    .user-acc-details>h3{
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .update-form{
+        padding: 5px 0px;
+    }
+    .update-form>div:first-child{
+        gap: 15px;
+        font-size: 12px;
+    }
+    .update-form>div:first-child>button{
+        font-size: 12px;
+    }
+    .update-form>div:nth-child(2) div>label{
+        font-size: 12px;
+        padding: 2px 0px;
+    }
+    .update-form>div:nth-child(2){
+        gap: 30px;
+        margin: 10px 0px;
+    }
+    .update-form>div:nth-child(2)>div>div>input{
+        padding: 13px 15px;
+        font-size: 12px;
+    }
+    .phone-input{
+        width: 100%;
+        display: flex;
+        flex-direction: column ;
+        margin: 10px 0px;
+    }
+    .phone-input>label{
+        font-size: 12px;
+        padding: 2px 0px;
+    }
+    .phone-input>input{
+        padding: 13px 15px;
+        font-size: 12px;
+    }
+    .update-form input::placeholder{
+        font-size: 12px;
+    }
+    .update-form+div>button{
+        font-size: 12px;
+    }
+    .main-update-photo>label svg{
+        font-size: 30px;
+    }
+    .update-form>div>h4{
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+
+    /* ////////////////////////////////// */
+
+    .my-order{
+        width: 100%;
+    }
+    .order-search-bar{
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .order img{
+        width: 90px;
+    }
+    .order-search-bar>button{
+        padding: 12px 0px;
+        font-size: 12px;
+    }
+    .order-search-bar>input{
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+    .order-search-bar>button{
+        width: 20%;
+    }
+    .order-search-bar>input{
+        width: 80%;
+    }
+    .order span{
+        font-size: 14px;
+    }
+
+    /* /////////////////////////////// */
+
+
+    .invoice-box{
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .invoice-head>h2,.invoice-main h2{
+        margin: 0px;
+        font-size: 14px;
+    }
+    .invoice-head>div{
+        font-size: 10px;
+    }
+    .invoice-head>div>svg{
+        font-size: 15px;
+    }
+    
+    .invoice-details{
+        padding: 10px 0rem;
+    }
+    .invoice-details>div:first-child{
+        width: 70%;
+        display: flex;
+    }
+    .invoice-details>div:first-child>div{
+        flex-direction: column;
+        font-size: 10px;
+    }
+    .invoice-details button{
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+    .cancel-order>button:hover{
+        background-color: #F8F9FA;
+        cursor: pointer;
+    }
+    .invoice-main{
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 10px;
+        gap: 10px;
+    }
+    .invoice-order{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        padding-left: 0px;
+    }
+    .invoice-summary{
+        width: 100%;
+        height: 250px;
+    }
+    .invoice-total>div{
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        padding: 8px 0px;
+    }
+    .invoice-total>div:first-child{
+        padding-top: 12px;
+    }
+    .invoice-total>div:nth-child(4){
+        padding-bottom: 15px;
+    }
+    .invoice-total>div:last-child{
+        padding-top: 10px;
+    }
+    .invoice-item img{
+        width: 80px;
+    }
+    .invoice-item>div:nth-child(1){
+        display: flex;
+        gap: 10px;
+        text-align: left;
+        font-size: 10px;
+        width: 40%;
+    }
+    .invoice-item span,p,strong{
+        font-size: 10px;
+    }
+    .invoice-item b{
+        font-size: 11px;
+        color: rgb(14, 87, 232);
+    }
+    .confirm-cancel>button{
+        font-size: 15px;
+    }
+    
+}

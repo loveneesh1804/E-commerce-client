@@ -15,12 +15,14 @@ const OrderDetail = () => {
   const [data,setData] = useState();
   const [orderCancel,setCancel] = useState();
   const user = useSelector(state=>state.user.user);
+  const [isMobile,setIsMobile] = useState(false);
 
   if(user){
     var decode = jwtDecode(user.token);
   }
 
   useEffect(()=>{
+    window.innerWidth<1200 && setIsMobile(true);
     const fetchData=async()=>{
       try{
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/${params.id}`);
@@ -88,9 +90,9 @@ const OrderDetail = () => {
                       <span>Address</span>
                   </div>
                   <div className='my-order-skeleton'>
-                      <Skeleton width={280} height={14} variant='rounded' />
-                      <Skeleton width={140} height={14} variant='rounded' />
-                      <Skeleton width={280} height={30} variant='rounded' />
+                      <Skeleton width={isMobile ? 150 : 280} height={14} variant='rounded' />
+                      <Skeleton width={isMobile ? 80 : 140} height={14} variant='rounded' />
+                      <Skeleton width={isMobile ? 150 : 280} height={33} variant='rounded' />
                   </div>
                 </div> }
                 
@@ -102,7 +104,7 @@ const OrderDetail = () => {
                   </div>
                 </div> 
                 : <div>
-                  <Skeleton variant='rounded' width={109} height={37} />
+                  <Skeleton variant='rounded' width={87} height={31} />
                   </div>}
 
               </div>
@@ -136,22 +138,22 @@ const OrderDetail = () => {
                       </div>
                       ))  : new Array(2).fill(0).map((el,i)=>(
                         <div key={i} className="invoice-item">
+                          <Skeleton variant='rounded' width={80} height={120} />
                         <div>
-                            <Skeleton variant='rounded' width={80} height={120} />
                             <div className='skeleton-flex'>
-                            <Skeleton variant='reactangular' width={150} height={40} />
-                            <Skeleton variant='reactangular' width={80} height={14} />
-                            <Skeleton variant='reactangular' width={50} height={14} />
-                          </div>
+                              <Skeleton variant='reactangular' width={isMobile ? 70 : 150} height={40} />
+                              <Skeleton variant='reactangular' width={isMobile ? 40 : 80} height={14} />
+                              <Skeleton variant='reactangular' width={isMobile ? 20 : 50} height={14} />
+                            </div>
                         </div>
                         <div>
-                          <Skeleton variant='rounded' width={140} height={14} />
+                          <Skeleton variant='rounded' width={isMobile ? 60 : 140} height={14} />
                         </div>
                         <div>
-                          <Skeleton variant='rounded' width={30} height={14} />
+                          <Skeleton variant='rounded' width={isMobile ? 20 : 30} height={14} />
                         </div>
                         <div>
-                          <Skeleton variant='rounded' width={80} height={14} />
+                          <Skeleton variant='rounded' width={isMobile ? 50 : 80} height={14} />
                         </div>
                       </div>
                       )) }
