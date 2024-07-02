@@ -621,4 +621,7 @@ input:disabled{
     .publish-review textarea{
         width: 300px !important;
     }
+    .publish-review>form>button{
+        color: black;
+    }
 }

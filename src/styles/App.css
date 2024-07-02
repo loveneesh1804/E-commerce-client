@@ -11,6 +11,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+button{
+    color: black
+}
+
+
 @import url("./Admin.css");
 @import url("./Chart-App.css");
 @import url("./Common.css");
@@ -397,6 +402,7 @@ body{
     font-weight: 800;
     background-color: white;
     border: none;
+    color: black;
     margin: 0px 4px;
     margin-bottom: 20px;
 }
