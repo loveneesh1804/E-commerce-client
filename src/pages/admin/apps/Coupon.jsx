@@ -169,8 +169,8 @@ const Coupon = () => {
         : <div className='coupon-display'>
               {new Array(4).fill(0).map((el,i)=>(
                 <div className='coupon-code'>
-                  <Skeleton variant='rounded' style={{marginBottom : "4px"}} width={100} height={14} />
-                  <Skeleton variant='rounded' width={130} height={50} />
+                  <Skeleton variant='rounded' style={{margin : "auto",marginBottom : "4px"}} width={100} height={14} />
+                  <Skeleton variant='rounded' style={{margin : "auto"}} width={130} height={50} />
                 </div>
               ))}
           </div>}

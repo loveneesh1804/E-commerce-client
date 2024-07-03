@@ -16,8 +16,13 @@ const Transcation = () => {
 
   const [data,setData] = useState();
   const [loading,setLoading] = useState(true);
+  const [mobile,setMobile] = useState(false);
 
   useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
     const fetchData=async()=>{
       try{
         if(user){
@@ -96,10 +101,10 @@ const Transcation = () => {
               <td>Progress!</td>
             </tr>: new Array(5).fill(0).map((el,i)=>(
               <tr className="user-table-skeleton" key={i}>
-                <td><Skeleton variant="reactangular" width={80} height={10} /></td>
-                <td><Skeleton variant="reactangular" width={80} height={10} /></td>
+                <td><Skeleton variant="reactangular" width={mobile ? 60 : 80} height={10} /></td>
+                <td><Skeleton variant="reactangular" width={mobile ? 60 : 80} height={10} /></td>
                 <td><Skeleton variant="reactangular" width={50} height={10} /></td>
-                <td><Skeleton variant="reactangular" width={140} height={10} /></td>
+                <td><Skeleton variant="reactangular" width={mobile ? 70 : 140} height={10} /></td>
                 <td><Skeleton variant="reactangular" width={50} height={10} /></td>
               </tr>
             ))}

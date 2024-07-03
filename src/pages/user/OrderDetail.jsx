@@ -22,6 +22,9 @@ const OrderDetail = () => {
   }
 
   useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setIsMobile(true) : setIsMobile(false);
+    })
     window.innerWidth<1200 && setIsMobile(true);
     const fetchData=async()=>{
       try{

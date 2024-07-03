@@ -13,10 +13,15 @@ const Manage = () => {
   const params = useParams();
   const [data,setData] = useState();
   const [modal,setModal] = useState();
+  const [mobile,setMobile] = useState(false);
   const [deleteModal,setDelete] = useState();
   const user = useSelector(state=>state.user.user);
   
   useEffect(()=>{
+    window.addEventListener("resize",()=>{
+        window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+      })
+      window.innerWidth<1200 && setMobile(true);
     const fetchData=async()=>{
         try{
             const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/${params.id}`);
@@ -150,7 +155,7 @@ const Manage = () => {
                         <div>
                             <Skeleton variant='rounded' width={60} height={90} />
                             <div>
-                                <Skeleton variant='rounded' width={200} height={35} />
+                                <Skeleton variant='rounded' width={mobile ? 150 : 200} height={35} />
                                 <Skeleton variant='rounded' style={{margin : "4px 0px"}} width={100} height={18} />
                                 <Skeleton variant='rounded' width={60} height={18} />
                             </div>
@@ -180,7 +185,7 @@ const Manage = () => {
                         <Skeleton variant='rounded' width={80} height={18} />
                         <Skeleton variant='rounded' style={{margin : "4px 0px"}} width={200} height={18} />
                     </div>
-                    <Skeleton style={{margin:"160px 0px 0px 40px"}} variant='rounded' width={230} height={42.5} />
+                    <Skeleton style={{margin: mobile ? "40px 0px 0px 40px"  : "160px 0px 0px 40px"}} variant='rounded' width={230} height={42.5} />
                 </div>
             </div> }
         </div>

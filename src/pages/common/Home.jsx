@@ -29,8 +29,11 @@ const Home = () => {
   const [isMobile,setIsMobile] = useState(false);
 
   useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setIsMobile(true) : setIsMobile(false);
+    })
     window.innerWidth<1200 && setIsMobile(true);
-    console.log(window.innerWidth)
+    
     async function fetchProducts(){
       try{
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/product/latest`);
@@ -74,7 +77,7 @@ const Home = () => {
               </Carousel>
             </div>: 
                <div className='skeleton-product'>
-                  {new Array(4).fill(0).map(()=>(
+                  {new Array(isMobile ? 3 : 4).fill(0).map(()=>(
                   <div>
                     <Skeleton variant="rounded" width={isMobile ? 130 : 250} height={isMobile ? 200 : 380} />
                     <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={isMobile ? 120 : 150} />

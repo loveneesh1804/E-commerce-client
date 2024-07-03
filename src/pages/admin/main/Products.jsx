@@ -19,9 +19,16 @@ const Products = () => {
   const admin = useSelector((state) => state.user.user);
   const [data, setData] = useState();
   const [loading,setLoading] = useState(true);
+  const [mobile,setMobile] = useState(false);
 
 
   useEffect(() => {
+
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
+    
     if (admin) {
       var decode = jwtDecode(admin.token);
     }
@@ -102,7 +109,7 @@ const Products = () => {
                   </tr> : new Array(5).fill(0).map((el,i)=>(
                     <tr className="user-table-skeleton" key={i}>
                       <td><Skeleton variant="reactangular" width={60} height={90} /></td>
-                      <td><Skeleton variant="reactangular" width={160} height={10} /></td>
+                      <td><Skeleton variant="reactangular" width={mobile ? 60 : 160} height={mobile ? 30 : 10} /></td>
                       <td><Skeleton variant="reactangular" width={80} height={10} /></td>
                       <td><Skeleton variant="reactangular" width={30} height={10} /></td>
                       <td><Skeleton variant="reactangular" width={60} height={10} /></td>

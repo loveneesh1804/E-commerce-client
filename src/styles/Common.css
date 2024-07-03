@@ -1045,7 +1045,10 @@ select:focus{
         border-radius: 5px;
         transition: all 0.7s;
     }
-
+    .close-cart{
+        padding: 10px 15px;
+    }
+    
     /* //////////////////////////// */
 
     .not-found>span{

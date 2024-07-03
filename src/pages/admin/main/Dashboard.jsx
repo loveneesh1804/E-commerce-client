@@ -21,8 +21,15 @@ const Dashboard = () => {
   const {last6Months} = getLastMonths();
 
   const [data, setData] = useState();
+  const [mobile,setMobile] = useState(false);
 
   useEffect(() => {
+
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
+
     if (!user) {
       return navigate("/");
     }
@@ -130,7 +137,7 @@ const Dashboard = () => {
               />
             ) : (
               <div>
-                  <Skeleton width={750} height={400} variant="rounded" />
+                  <Skeleton width={mobile ? 365 : 750} height={400} variant="rounded" />
               </div>
             )}
           </div>
@@ -146,7 +153,7 @@ const Dashboard = () => {
                 {new Array(7).fill(0).map((el,i)=>(
                   <div key={i} className="inventory-skeleton">
                     <Skeleton variant="circular" width={30} height={30} />
-                    <Skeleton variant="text" sx={{ fontSize: '0.7rem' }} width={140} />
+                    <Skeleton variant="text" sx={{ fontSize: '0.7rem' }} width={mobile ? 300 : 140} />
                     <Skeleton variant="circular" width={30} height={30} />
                   </div>
                 ))}
@@ -195,7 +202,7 @@ const Dashboard = () => {
               <tbody>
                 {new Array(4).fill(0).map((el,i)=>(
                   <tr key={i}>
-                  <td><Skeleton variant="rounded" width={180} height={20} /></td>
+                  <td><Skeleton variant="rounded" width={mobile ? 130 : 180} height={20} /></td>
                   <td><Skeleton variant="rounded" width={50} height={20} /></td>
                   <td><Skeleton variant="rounded" width={50} height={20} /></td>
                   <td><Skeleton variant="rounded" width={80} height={20} /></td>

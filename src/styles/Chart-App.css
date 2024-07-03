@@ -512,5 +512,185 @@ code>span{
         margin: 5px 0px;
         font-size: 17px;
     }
+    .upload-img{
+        width: 60%;
+    }
+
+    /* ///////////////////////////////// */
+
+
+
+    .bar-container,.pie-container,.line-container{
+        width: 100%;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    .pie-container>h1{
+        font-size: 20px;
+    }
+    .line-container>h1{
+        font-size: 20px;
+    }
+    .bar-container>h1{
+        font-size: 20px;
+    }
+    .pie-container>div>div{
+        padding: 10px 15px;
+        width: 100%;
+        margin: auto;
+    }
+    .bar-container>div{
+        padding: 10px 15px;
+        width: 100%;
+        margin: auto;
+    }
+    .line-container>div{
+        padding: 10px 15px;
+        width: 100%;
+        margin: auto;
+    }
+    .pie-container>div>div>h2{
+        font-size: 12px;
+        margin: 15px;
+        font-weight: 700;
+    }
+    .bar-container>div>h2{
+        margin: 15px;
+        font-weight: 700;
+        font-size: 12px;
+    }
+    .line-container>div{
+        margin: auto;
+        margin-top: 2rem;
+    }
+    .line-container>div:last-child{
+        margin-bottom: 2rem;
+    }
+    .line-container>div>h2{
+        font-size: 18px;
+    }
+    .app-container{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    .app-container>h1{
+        font-size: 20px;
+    }
+    .stopwatch-main{
+        padding: 1rem 5rem;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .coupon-container{
+        background-color: white;
+        padding: 10px 15px;
+        margin: auto;
+        width: 100%;
+    }
+    .coupon-display{
+        width: 100%;
+        margin-top: 0px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .coupon-code>svg{
+        font-size: 25px;
+        top: -1px;
+        right: -1px;
+    }
+
+    .pie-flex{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .pie-container>div>div{
+       margin: 0px;
+       height: 450px;
+    }
+    .no-coupon{
+        width: 100%;
+        margin: 10px 0px !important;
+    }
+    fieldset{
+        border: 0.5px solid black;
+        border-radius: 5px;
+    }
+    fieldset span{
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    fieldset legend{
+       text-align: right;
+       font-size: 10px;
+    }
+    .f2>label{
+        top: -8px;
+        font-size: 11px;
+    }
+    .f2>input{
+        font-size: 11px;
+    }
+    .first{
+        gap: 7px;
+    }
+    .first>div:nth-child(2){
+        width: 50px;
+    }
+    .first>div:nth-child(3){
+        width: 110px;
+    }
+
+    code:hover span{
+        opacity: 1;
+        cursor: pointer;
+    }
+    code>span{
+        opacity: 0;
+    }
+
+    /* ////////////////////////////// */
+
+
+    .inventory-skeleton{
+        display: flex;
+        gap: 10px;
+        padding: 5px 0px;
+    }
+    .widget-skeleton{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pie-skeleton{
+        display: flex;
+        gap: 70px;
+    }
+    .pie-load{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .skeleton-table{
+        width: 100%;
+    }
+    .skeleton-table>h2{
+        font-size: 20px;
+    }
     
+    .skeleton-table>table{
+        width: 100%;
+    }
+    .skeleton-table>table>thead>tr>th{
+        font-size: 10px;
+    }
+    .skeleton-table td{
+        padding: 10px 0px;
+    }
+    .skeleton-table span{
+        margin-left: 10px;
+    }
+    .user-table-skeleton td{
+        padding-left: 10px;
+     }
 }

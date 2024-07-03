@@ -27,7 +27,7 @@
 .admin-sidebar>div{
     margin: 2rem 1rem;
 }
-.admin-sidebar>h2{
+.admin-sidebar>section>h2{
     margin: 0px;
     padding-left: 20px;
     font-size: 30px;
@@ -181,11 +181,7 @@
     width: 18.5%;
     display: flex;
     flex-direction: column;
-    /* transition: transform .2s; */
 }
-/* .inventory:hover{
-    transform: scale(1.09);
-} */
 .inventory-item{
     width: 100%;
     display: flex;
@@ -401,7 +397,7 @@
     background-color: white;
     border-radius: 10px;
     width: 40%;
-    height: 78vh;
+    height: 580px;
     padding: 1rem 2rem;
     top: 1000px;
     left: 420px;
@@ -1007,5 +1003,289 @@ input::-webkit-outer-spin-button,
     .payment-box code{
         padding: 8px 20px;
         font-size: 15px;
+    }
+
+    /* ///////////////////////////////////// */
+    .admin-dashboard,.admin-products,.admin-transactions,.admin-users,.bar,.pie,.line,.stopwatch,.coupon{
+        gap: 0px;
+        flex-direction: column;
+        height: auto;
+    }
+    .admin-sidebar{
+        width: 100%;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgb(220,220,220);
+        position: relative;
+    }
+    .admin-sidebar>svg{
+        position: absolute;
+        top: 50%;
+        font-size: 30px;
+        transform: translate(0%,-60%);
+    }
+    .admin-sidebar+main{
+        width: 100%;
+        padding: 10px 15px;
+        overflow: hidden;
+    }
+    .admin-sidebar+.manage-product{
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .admin-sidebar>div{
+        display: none;
+    }
+    .admin-sidebar>section{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 0px;
+    }
+    .admin-sidebar>section>h2{
+        padding-left: 0px;
+        padding-bottom: 0px;
+        text-align: center;
+        font-size: 25px;
+        margin: 0px;
+        border-bottom: none;
+    }
+    .admin-sidebar>section>svg{
+        font-size: 30px;
+    }
+    .dashboard-search{
+        padding: 10px 15px;
+        padding-bottom: 4px;
+        gap: 5px;
+    }
+    .dashboard-search>input{
+        font-size: 12px;
+    }
+    .dashboard-search>input+svg{
+        padding: 4px;
+        font-size: 30px;
+    }
+    .dashboard-search>span{
+        width: 40px;
+        font-size: 14px;
+        height: 40px;
+    }
+    .widget-box{
+        padding: 10px 10px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+    .widget{
+        width: 100%;
+        padding: 15px ;
+    }
+    .widget:hover{
+        transform: scale(1);
+    }
+    .admin-graph{
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 10px;
+    }
+    .admin-graph>div{
+        padding: 10px 15px;
+    }
+    .admin-graph>div>h2{
+        font-size: 18px;
+        margin: 5px 0px 10px 0px;
+    }
+    .revenue-chart{
+        width: 100%;
+    }
+    .inventory{
+        width: 100%;
+    }
+    .inventory-item>h5{
+        margin: 10px 0px;
+    }
+
+    .inventory-item>div{
+        min-width: 70%;
+    }
+    .admin-table{
+        padding: 10px 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .admin-table>div{
+        padding: 10px 15px;
+    }
+    .gender-chart{
+        width: 100%;
+    }
+    .gender-chart>h2{
+        margin: 5px 0px 15px 0px;
+        font-size: 18px;
+    }
+    .transaction-box{
+        width: 100%;
+    }
+    .transaction-box>h2{
+        font-size: 18px;
+        margin: 5px 0px 15px 0px;
+    }
+    .transaction-box>table{
+        width: 90%;
+        margin: auto;
+    }
+    .transaction-box>table>thead>tr>th{
+        font-size: 10px;
+    }
+    .transaction-box>table td{
+       padding: 10px;
+       font-size: 10px;
+       text-align: center;
+    }
+
+    /* /////////////////////////////////// */
+    .product-dashboard>div>h2{
+        font-size: 20px;
+        padding: 10px 15px;
+        margin: 5px 0px;
+    }
+    .product-dashboard{
+        padding: 0px 10px;
+    }
+    .product-dashboard>div{
+        width: 100%;
+    }
+    .product-dashboard>div>img{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        transition: all 0.6s;
+    }
+    .product-dashboard>div>img:hover{
+        transform: rotate(90deg);
+    }
+    .admin-product-table{
+        margin: 10px 0px;
+        width: 100%;
+        padding: 10px 5px;
+        padding-bottom: 60px;
+
+    }
+    .admin-product-table img{
+        width: 50px;
+    }
+    .admin-user-ico{
+        width: 30px;
+        height: 30px;
+        font-weight: 300;
+        padding: 8px 13px;
+        font-size: 14px;
+    }
+    .admin-product-table img:hover{
+        transform: scale(1);
+    }
+    .product-dashboard table>thead>tr>th{
+        padding: 5px;
+        font-size: 11px;
+    }
+    .admin-product-table td{
+       padding: 10px 7px;
+       font-size: 10px;
+    }
+    .admin-product-table td>button{
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    .admin-product-table td{
+        font-size: 8px;
+    }
+
+    .add-pro-div{
+        width: 90%;
+        padding: 10px 20px;
+        top: 1000px;
+        left: 20px;
+        height: 670px;
+        position: absolute;
+        padding-bottom: 4.5rem;
+    }
+    .pop-down{
+        top: 100px;
+    }
+    .img-modal{
+       width: 300px;
+    }
+
+    /* ///////////////////////////////// */
+
+    .back{
+        padding: 5px;
+        top: 95px;
+        left: 30px;
+    }
+    .manage-product{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+    .product-manage-info{
+        width: 100%;
+        height: 685px;
+    }
+    .product-manage{
+        width: 100%;
+        height: 690px;
+    }
+    .product-manage svg{
+        top: 10px;
+        right: 10px;
+    }
+    
+    .main-delete{
+        padding: 2rem 1.5rem;
+        width: 90%;
+        padding-bottom: 1rem;
+    }
+    .up-pop{
+        top: 50%;
+    }
+
+    
+    /* /////////////////////////// */
+
+    .order-manage>div>img{
+        width: 60px;
+    }
+    .order-manage{
+        width: 100%;
+    }
+    .order-manage>div{
+        display: flex;
+        gap: 20px;
+    }
+    .order-manage>div>div{
+        display: flex;
+        flex-direction: column;
+    }
+    .manage-order{
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .orders{
+        width: 100%;
+        height: auto;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .orders-details{
+        width: 100%;
+        height: 600px;
+        margin-bottom: 20px;
     }
 }

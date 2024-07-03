@@ -65,6 +65,9 @@ const ProductShop = () => {
   }
 
   useEffect(() => {
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setIsMobile(true) : setIsMobile(false);
+    })
     window.innerWidth<1200 && setIsMobile(true);
     if (user) {
       var decode = jwtDecode(user.token);
@@ -566,7 +569,7 @@ const ProductShop = () => {
       </section>
 
 
-      {modal ? (
+      {user ? (
         <div
           className="update-modal"
           onClick={(e) =>

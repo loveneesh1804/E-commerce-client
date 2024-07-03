@@ -930,6 +930,11 @@ body{
         width: 100%;
         padding: 50px 0px;
     }
+    .user-logo{
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+    }
     .header-info p{
         font-size: 10px;
     }
@@ -1059,7 +1064,7 @@ body{
 
     .footer{
         gap: 10px;
-        padding: 10px 20px 10px 40px;
+        padding: 10px 20px 10px 20px;
     }
     .footer>div{
         padding: 20px 50px 20px 20px;
@@ -1069,14 +1074,13 @@ body{
     }
     .footer>div>h5 , .footer>div>p{
         margin: 0px;
-        font-size: 10px;
+        font-size: 11px;
     }
     .footer h5{
-        font-size: 12px;
         padding-bottom: 20px;
     }
     .footer p{
-        font-size: 10px;
+        font-size: 12px;
         padding: 3px 0px;
     }
     .footer>div:last-child{
@@ -1146,6 +1150,7 @@ body{
     }
     .cart-item-qty{
         font-size: 7px !important;
+        top: 15px;
     }
     .inner-brand{
         width: 260px;
@@ -1238,7 +1243,7 @@ body{
         padding-bottom: 15px;
     }
     .legend{
-        top: -125px;
+        top: -122px;
         font-size: 12px;
     }
     .signup-personal>p{

@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PriceChangeIcon from "@mui/icons-material/PriceChange";
@@ -11,13 +11,21 @@ import TimerIcon from "@mui/icons-material/Timer";
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import { useSelector} from "react-redux";
 import { jwtDecode } from "jwt-decode";
+import MenuIcon from '@mui/icons-material/Menu';
+import Mobile from "./Mobile";
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [mobile,setMobile] = useState(false);
+  const [viewSide,setViewSide] = useState(false);
 
   const user = useSelector(state=>state.user.user);
   useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      window.innerWidth < 1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth < 1200 && setMobile(true);
     if(user){
       const decode = jwtDecode(user.token);
       if(decode.role!=="admin"){
@@ -27,12 +35,16 @@ const Sidebar = () => {
       navigate("/")
     }
   },[])
-
   return (
-    <aside className="admin-sidebar">
-      <h2 onClick={()=>navigate("/")}>
-        Wisd<span style={{ color: "red" }}>Φ</span>m
-      </h2>
+    <>
+      <aside className="admin-sidebar">
+      
+      <section>
+        {mobile ?  <MenuIcon onClick={()=>setViewSide(true)} /> : undefined}
+        <h2 onClick={()=>navigate("/")}>
+          Wisd<span style={{ color: "red" }}>Φ</span>m
+        </h2>
+      </section>
       <div>
         <h5>Dashboard</h5>
         <ul>
@@ -152,6 +164,8 @@ const Sidebar = () => {
         </ul>
       </div>
     </aside>
+    {mobile ? <Mobile view={{viewSide,setViewSide}} /> : undefined}
+    </>
   );
 };
 

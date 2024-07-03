@@ -17,6 +17,7 @@ const Users = () => {
   const [data, setData] = useState();
 
   const [userDel,setUserDel] = useState();
+  const [mobile,setMobile] = useState(false);
 
   const admin = useSelector((state) => state.user.user);
   if (admin) {
@@ -55,6 +56,12 @@ const Users = () => {
   }
 
   useEffect(() => {
+
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
+
     const fetchData = async () => {
       try {
         const res = await fetch(
@@ -127,10 +134,10 @@ const Users = () => {
                   </tr>
                 )): new Array(5).fill(0).map((el,i)=>(
                   <tr className="user-table-skeleton" key={i}>
-                    <td><Skeleton variant="circular" width={50} height={50} /></td>
-                    <td><Skeleton variant="reactangular" width={80} height={10} /></td>
+                    <td><Skeleton variant="circular" width={mobile ? 40 : 50} height={mobile ? 40 : 50} /></td>
+                    <td><Skeleton variant="reactangular" width={mobile ? 40 : 80} height={10} /></td>
                     <td><Skeleton variant="reactangular" width={50} height={10} /></td>
-                    <td><Skeleton variant="reactangular" width={120} height={10} /></td>
+                    <td><Skeleton variant="reactangular" width={mobile ? 60 : 120} height={10} /></td>
                     <td><Skeleton variant="reactangular" width={50} height={10} /></td>
                     <td><Skeleton variant="circular" width={20} height={20} /></td>
                   </tr>

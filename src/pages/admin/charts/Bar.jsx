@@ -13,13 +13,17 @@ const {last12Months,last6Months} = getLastMonths();
 
 const Bar = () => {
 
-
+  const [mobile,setMobile] = useState(false);
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
 
   const [data, setData] = useState();
 
   useEffect(() => {
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
     if (!user) {
       return navigate("/");
     }
@@ -63,7 +67,7 @@ const Bar = () => {
               bgColor2='rgb(142, 193, 218)'
               labels={last6Months}
             />  :
-            <Skeleton width={874} height={437} variant='rounded' />}
+            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Top Selling Products of last six month</h2>
           </div>
           <div className='horizontal-bar'>
@@ -76,7 +80,7 @@ const Bar = () => {
                 bgColor1="rgb(234, 128, 28)"
                 labels={last12Months}
               />  :
-              <Skeleton width={874} height={437} variant='rounded' />}
+              <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
               <h2>Orders of last Twelve Months</h2>
           </div>
         </main>

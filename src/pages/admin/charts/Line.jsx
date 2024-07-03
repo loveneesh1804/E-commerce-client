@@ -13,10 +13,15 @@ const Line = () => {
 
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
+  const [mobile,setMobile] = useState(false);
 
   const [data, setData] = useState();
 
   useEffect(() => {
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setMobile(true) : setMobile(false);
+    })
+    window.innerWidth<1200 && setMobile(true);
     if (!user) {
       return navigate("/");
     }
@@ -57,7 +62,7 @@ const Line = () => {
               bgColor="rgba(53, 162, 255,0.4)"
               borderColor='rgb(53,162,255)'
             />  :
-            <Skeleton width={874} height={437} variant='rounded' />}
+            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Active Users</h2>
           </div>
 
@@ -68,7 +73,7 @@ const Line = () => {
               bgColor="hsla(29,80%,40%,0.4)"
               borderColor='hsl(29,80%,40%)'
             />  :
-            <Skeleton width={874} height={437} variant='rounded' />}
+            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Total Product</h2>
           </div>
         </main>

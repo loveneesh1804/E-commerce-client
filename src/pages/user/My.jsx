@@ -48,6 +48,9 @@ const My = () => {
   ];
 
   useEffect(() => {
+    window.addEventListener("resize",()=>{
+      window.innerWidth<1200 ? setIsMobile(true) : setIsMobile(false);
+    })
     window.innerWidth<1200 && setIsMobile(true);
     if (!user) {
       return navigate("/");
