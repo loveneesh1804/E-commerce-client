@@ -94,7 +94,7 @@ const Users = () => {
               <tr>
                 <th>Avatar</th>
                 <th>Name</th>
-                <th>Gender</th>
+                <th style={{display : mobile ? 'none' : null}}>Gender</th>
                 <th>Email</th>
                 <th>Role</th>
                 <th>Action</th>
@@ -122,7 +122,7 @@ const Users = () => {
                       </td>
                     )}
                     <td>{el.name}</td>
-                    <td>{el.gender}</td>
+                    <td style={{display : mobile ? 'none' : null}}>{el.gender}</td>
                     <td>{el.username}</td>
                     <td>{el.role}</td>
                     <td

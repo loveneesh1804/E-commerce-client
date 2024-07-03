@@ -1198,18 +1198,22 @@ input::-webkit-outer-spin-button,
     .admin-product-table td{
         font-size: 8px;
     }
+    
 
     .add-pro-div{
         width: 90%;
         padding: 10px 20px;
         top: 1000px;
         left: 20px;
-        height: 670px;
+        height: 640px;
         position: absolute;
-        padding-bottom: 4.5rem;
+        padding-bottom: 2rem !important; 
+    }
+    .add-pro-div h2{
+        margin: 10px;
     }
     .pop-down{
-        top: 100px;
+        top: 70px;
     }
     .img-modal{
        width: 300px;
