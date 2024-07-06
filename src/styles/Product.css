@@ -81,6 +81,7 @@
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 110%;
     transition: all 0.5s;
+    padding-bottom: 100px;
 }
 .main-product{
     padding: 4px;
