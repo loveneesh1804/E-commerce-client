@@ -79,7 +79,7 @@ const Home = () => {
                <div className='skeleton-product'>
                   {new Array(isMobile ? 3 : 4).fill(0).map(()=>(
                   <div style={{width : '100%'}}>
-                    <Skeleton variant="rounded" width={isMobile ? '100%' : '100%'} height={isMobile ? 200 : 380} />
+                    <Skeleton variant="rounded" width={'100%'} height={isMobile ? 200 : 380} />
                     <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={isMobile ? 120 : 150} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={isMobile ? 50 : 100} />
                   </div>

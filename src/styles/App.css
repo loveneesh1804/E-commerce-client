@@ -1048,7 +1048,7 @@ body{
         font-weight: 900;
     }
     .buttons{
-        margin-top: 100px;
+        margin-top: 80px;
     }
     .buttons p{
         font-size: 8px;
@@ -1103,6 +1103,7 @@ body{
     .latetst-products{
         width: 98%;
         padding-bottom: 20px;
+        margin: auto;
     }
     .latetst-products-head>h2{
         font-size: 18px;
