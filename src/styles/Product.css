@@ -71,7 +71,7 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 67%;
+    grid-auto-rows: 85%;
     transition: all 0.5s;
     padding-bottom: 100px;
 }
@@ -79,14 +79,13 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 73.5%;
+    grid-auto-rows: 91%;
     transition: all 0.5s;
 }
 .main-product{
     padding: 4px;
     font-weight: 300;
     position: relative;
-    height: 447px;
 }
 .main-product:hover span{
     bottom: 25%;
@@ -507,7 +506,7 @@ input:disabled{
 @media screen and (min-width: 300px) and (max-width: 900px){
     .main-products-grid{
         grid-template-columns: repeat(2,1fr);
-        grid-auto-rows: 56.5%;
+        grid-auto-rows: 57%;
     }
     .main-product{
         padding: 4px;
@@ -522,8 +521,11 @@ input:disabled{
         font-size: 9px;
     }
     .main-product>span{
-        bottom: 18%;
+        bottom: 21%;
         font-size: 11px;
+    }
+    .main-product:hover span{
+        bottom: 23%;
     }
     .main-product>h6{
         font-size: 7px;

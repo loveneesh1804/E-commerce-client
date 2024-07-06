@@ -197,7 +197,6 @@ const Shop = () => {
                       className="main-product"
                       key={el._id}
                       onClick={()=>navigate(`/shop/${el._id}`)}
-                      style={{height : !filter && '527px'}}
                     >
 
                       <img

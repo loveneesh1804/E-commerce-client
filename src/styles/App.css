@@ -1125,11 +1125,11 @@ body{
         font-size: 8px;
     }
     .price{
-        top: 73%;
+        top: 77%;
         left: 6px;
     }
     .product:hover .price{
-        top: 70%;
+        top: 75%;
     }
     .heart-ico{
         top: 8px;
