@@ -137,7 +137,7 @@ const Dashboard = () => {
               />
             ) : (
               <div>
-                  <Skeleton width={mobile ? 365 : 750} height={400} variant="rounded" />
+                  <Skeleton width={'100%'} height={400} variant="rounded" />
               </div>
             )}
           </div>
@@ -202,10 +202,10 @@ const Dashboard = () => {
               <tbody>
                 {new Array(4).fill(0).map((el,i)=>(
                   <tr key={i}>
-                  <td><Skeleton variant="rounded" width={mobile ? 130 : 180} height={20} /></td>
+                  <td><Skeleton variant="rounded" width={mobile ? 120 : 180} height={20} /></td>
                   <td><Skeleton variant="rounded" width={50} height={20} /></td>
                   <td><Skeleton variant="rounded" width={50} height={20} /></td>
-                  <td><Skeleton variant="rounded" width={80} height={20} /></td>
+                  <td><Skeleton variant="rounded" width={70} height={20} /></td>
                 </tr>
                 ))}
               </tbody>

@@ -299,8 +299,8 @@ body{
 
 
 .banner-carousel{
-    width: 910px;
-    height: 510px;
+    width: 60.8%;
+    height: 65vh;
     overflow: hidden;
     position: relative;
     margin: auto;
@@ -310,19 +310,18 @@ body{
 }
 .banner-box{
     display: flex;
-    width: 910px;
-    right: 510px;
+    width: 101%;
     transition: all 0.5s;
     position: absolute;
 }
 .banner img,.banner{
-    width: 910px;
+    width: 100%;
 }
 .banner{
     position: relative;
 }
 .carousel-scroll{
-    width: 910px;
+    width: 60.8%;
     height: 2px;
     background-color: rgb(236, 236, 236);
     margin: auto;
@@ -332,7 +331,7 @@ body{
 }
 .scroller{
     position: absolute;
-    width: 303px;
+    width: 33.33%;
     height: 2px;
     background-color: black;
     transition: all 0.5s;
@@ -985,27 +984,27 @@ body{
         align-items: center;
     }
     .banner-carousel{
-        width: 400px;
-        height: 280px;
+        width: 92%;
+        height: 260px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
     .banner-box{
         display: flex;
-        width: 400px;
-        height: 280px;
+        width: 100%;
+        height: 100%;
         transition: all 0.5s;
         position: absolute;
     }
     .banner img,.banner{
-        width: 400px;
+        width: 100%;
     }
     .carousel-scroll{
-        width: 400px;
+        width: 90%;
         margin-bottom: 20px;
     }
     .scroller{
-        width: 133px;
+        width: 33.33%;
     }
 
 
@@ -1113,11 +1112,8 @@ body{
     }
     .product{
         font-size: 10px;
-        position: relative;
-        height: 250px;
     }
     .product>img{
-        width: 130px;
         border-radius: 10px;
     }
     .product>p{
@@ -1127,8 +1123,11 @@ body{
         font-size: 8px;
     }
     .price{
-        bottom: 55px;
+        top: 73%;
         left: 6px;
+    }
+    .product:hover .price{
+        top: 70%;
     }
     .heart-ico{
         top: 8px;

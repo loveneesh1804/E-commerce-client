@@ -66,7 +66,7 @@ const Home = () => {
               <Carousel responsive={responsive}>
               {latest.map((el)=>(
                 <div onClick={()=>navigate(`/shop/${el._id}`)} className='product' key={el._id}>
-                    <img crossOrigin='anonymous' src={el.photo} />
+                    <img crossOrigin='anonymous' src={el.photo} alt='por-ico' />
                     <span className='price'>₹{el.price}</span>
                     <p>{el.name}</p>
                     <span>{el.category}</span>
@@ -78,8 +78,8 @@ const Home = () => {
             </div>: 
                <div className='skeleton-product'>
                   {new Array(isMobile ? 3 : 4).fill(0).map(()=>(
-                  <div>
-                    <Skeleton variant="rounded" width={isMobile ? 130 : 250} height={isMobile ? 200 : 380} />
+                  <div style={{width : '100%'}}>
+                    <Skeleton variant="rounded" width={isMobile ? '100%' : '100%'} height={isMobile ? 200 : 380} />
                     <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={isMobile ? 120 : 150} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={isMobile ? 50 : 100} />
                   </div>

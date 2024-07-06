@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { jwtDecode } from 'jwt-decode';
 import {toast} from "react-hot-toast";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Skeleton } from '@mui/material';
+import { Backdrop, CircularProgress, Skeleton } from '@mui/material';
 
 const Manage = () => {
   const navigate = useNavigate();
@@ -14,7 +14,9 @@ const Manage = () => {
   const [data,setData] = useState();
   const [modal,setModal] = useState();
   const [mobile,setMobile] = useState(false);
+  const [open,setOpen] = useState(false);
   const [deleteModal,setDelete] = useState();
+
   const user = useSelector(state=>state.user.user);
   
   useEffect(()=>{
@@ -44,7 +46,8 @@ const Manage = () => {
 
   const handleStatus=async()=>{
     try{
-        
+        setModal(false);
+        setOpen(true);
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/${params.id}?id=${decode.id}`,{
             method : "PUT",
             headers : {
@@ -55,17 +58,21 @@ const Manage = () => {
         const result = await res.json();
 
         if(result.succes){
+            setOpen(false);
             toast.success("Status Updated!")
             return navigate("/admin/transactions");
         }
 
     }catch(e){
+        setOpen(false);
         return e;
     }
   }
 
   const handleDelete=async()=>{
     try{
+        setDelete(false);
+        setOpen(true);
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/${params.id}?id=${decode.id}`,{
             method : "DELETE",
             headers : {
@@ -76,11 +83,13 @@ const Manage = () => {
         const result = await res.json();
 
         if(result.succes){
+            setOpen(false);
             toast.success("Order Deleted!")
             return navigate("/admin/transactions");
         }
 
     }catch(e){
+        setOpen(false);
         return e;
     }
   }
@@ -189,6 +198,10 @@ const Manage = () => {
                 </div>
             </div> }
         </div>
+
+        <Backdrop sx={{color : '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open} >
+          <CircularProgress color='inherit' />
+        </Backdrop>
 
         {data && <div className="update-modal"
         onClick={(e)=>e.target.className==="update-modal" && setModal(false)}

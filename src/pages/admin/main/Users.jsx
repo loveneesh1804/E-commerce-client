@@ -8,7 +8,7 @@ import ImageModal from "../../../components/utils/ImageModal";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { toast } from "react-hot-toast";
-import { Skeleton } from "@mui/material";
+import { Backdrop, CircularProgress, Skeleton } from "@mui/material";
 
 
 const Users = () => {
@@ -18,6 +18,7 @@ const Users = () => {
 
   const [userDel,setUserDel] = useState();
   const [mobile,setMobile] = useState(false);
+  const [open,setOpen] = useState(false);
 
   const admin = useSelector((state) => state.user.user);
   if (admin) {
@@ -35,12 +36,14 @@ const Users = () => {
 
   const confirmDelete = async()=>{
     try{
-      console.log(`${process.env.REACT_APP_SERVER}/api/user/${userDel.id}?id=${decode.id}`);
+      setDelView(false);
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/user/${userDel.id}?id=${decode.id}`,{
         method : "DELETE"
       });
       const result = await res.json();
       if(result.sucess){
+        setOpen(false);
         setDelView(false);
         toast.success("User Deleted Successfully");
         let id = setTimeout(()=>{
@@ -51,6 +54,7 @@ const Users = () => {
 
     }
     catch(err){
+      setOpen(false);
       return err;
     }
   }
@@ -157,6 +161,11 @@ const Users = () => {
           </div>
         </div>
       </main>
+
+      {/* Loading */}
+      <Backdrop sx={{color : '#fff'}} open={open} >
+          <CircularProgress color='inherit' />
+      </Backdrop>
 
 
       {/* modal */}

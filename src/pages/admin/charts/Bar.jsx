@@ -67,7 +67,7 @@ const Bar = () => {
               bgColor2='rgb(142, 193, 218)'
               labels={last6Months}
             />  :
-            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
+            <Skeleton width={'100%'} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Top Selling Products of last six month</h2>
           </div>
           <div className='horizontal-bar'>
@@ -80,7 +80,7 @@ const Bar = () => {
                 bgColor1="rgb(234, 128, 28)"
                 labels={last12Months}
               />  :
-              <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
+              <Skeleton width={'100%'} height={mobile ? 177 : 437} variant='rounded' />}
               <h2>Orders of last Twelve Months</h2>
           </div>
         </main>

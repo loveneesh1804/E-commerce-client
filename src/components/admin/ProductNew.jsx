@@ -4,11 +4,13 @@ import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 const ProductNew = ({ view, setView }) => {
   const [data, setData] = useState({});
   const [images, setImages] = useState();
   const [preview, setPreview] = useState();
+  const [open, setOpen] = useState(false);
   const admin = useSelector((state) => state.user.user);
 
   const handleChange = (e) => {
@@ -34,7 +36,7 @@ const ProductNew = ({ view, setView }) => {
       formData.set("category", category);
 
       var decode = jwtDecode(admin.token);
-
+      setOpen(true);
       const res = await fetch(
         `${process.env.REACT_APP_SERVER}/api/product/new?id=${decode.id}`,
         {
@@ -44,6 +46,7 @@ const ProductNew = ({ view, setView }) => {
       );
       const result = await res.json();
       if (result.success) {
+        setOpen(false);
         toast.success(result.message);
         let id = setTimeout(() => {
           window.location.reload(true);
@@ -52,9 +55,11 @@ const ProductNew = ({ view, setView }) => {
         }, 1000);
         return setView(false);
       } else {
+        setOpen(false);
         return toast.error("Something Went Wrong!");
       }
     } catch (e) {
+      setOpen(false);
       return toast.error(e);
     }
   };
@@ -69,7 +74,8 @@ const ProductNew = ({ view, setView }) => {
 
 
   return (
-    <div
+    <>
+      <div
       onClick={(e) => e.target.className === "add-product" && setView(false)}
       style={{ visibility: view ? "visible" : "hidden" }}
       className="add-product"
@@ -135,6 +141,10 @@ const ProductNew = ({ view, setView }) => {
         </form>
       </div>
     </div>
+    <Backdrop sx={{color : "#fff"}} open={open}>
+      <CircularProgress color="inherit" />
+    </Backdrop>
+    </>
   );
 };
 

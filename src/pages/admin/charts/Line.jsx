@@ -62,7 +62,7 @@ const Line = () => {
               bgColor="rgba(53, 162, 255,0.4)"
               borderColor='rgb(53,162,255)'
             />  :
-            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
+            <Skeleton width={'100%'} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Active Users</h2>
           </div>
 
@@ -73,7 +73,7 @@ const Line = () => {
               bgColor="hsla(29,80%,40%,0.4)"
               borderColor='hsl(29,80%,40%)'
             />  :
-            <Skeleton width={mobile ? 354 : 874} height={mobile ? 177 : 437} variant='rounded' />}
+            <Skeleton width={'100%'} height={mobile ? 177 : 437} variant='rounded' />}
             <h2>Total Product</h2>
           </div>
         </main>

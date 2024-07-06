@@ -6,7 +6,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useParams,useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { jwtDecode } from 'jwt-decode';
-import { Skeleton } from '@mui/material';
+import { Backdrop, CircularProgress, Skeleton } from '@mui/material';
 import toast from 'react-hot-toast';
 
 const OrderDetail = () => {
@@ -16,6 +16,8 @@ const OrderDetail = () => {
   const [orderCancel,setCancel] = useState();
   const user = useSelector(state=>state.user.user);
   const [isMobile,setIsMobile] = useState(false);
+  const [open,setOpen] = useState(false);
+
 
   if(user){
     var decode = jwtDecode(user.token);
@@ -43,6 +45,7 @@ const OrderDetail = () => {
 
   const handleCancel=async()=>{
     try{
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/cancel/${data._id}`,{
         method : "PUT"
       });
@@ -50,12 +53,15 @@ const OrderDetail = () => {
       const result = await res.json();
       if(result.succes){
         toast.success(result.message);
+        setOpen(false);
         return navigate(`/my/orders/${decode.id}`)
       }
       else{
+        setOpen(false);
         return toast.error("Something Went Wrong");
       }
     }catch(e){
+      setOpen(false);
       return toast.error("Invalid Action")
     }
   }
@@ -212,6 +218,9 @@ const OrderDetail = () => {
               </div>
             </div>
         </section>
+        <Backdrop sx={{color : '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open} >
+          <CircularProgress color='inherit' />
+        </Backdrop>
         <Footer />
     </>
   )

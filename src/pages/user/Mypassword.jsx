@@ -7,11 +7,14 @@ import toast from 'react-hot-toast';
 import { jwtDecode } from 'jwt-decode';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Backdrop, CircularProgress } from '@mui/material';
 
 const Mypassword = () => {
 
   const [newPassword,setNewPassword] = useState();
   const [oldPassword,setOldPassword] = useState();
+  const [open,setOpen] = useState(false);
+
   const user = useSelector((state)=>state.user.user);
   const navigate = useNavigate();
 
@@ -27,7 +30,7 @@ const Mypassword = () => {
       if(newPassword.length<8){
         return toast.error("Password Should Contain at least 8 characters")
       }
-      
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/user/reset/${decode.id}`,{
         method : "POST",
         headers : {
@@ -42,13 +45,16 @@ const Mypassword = () => {
       const result = await res.json();
       if(result.success){
         toast.success(result.message);
+        setOpen(false);
         return navigate(`/my/${decode.id}`);
       }
       else{
+        setOpen(false);
         return toast.error(result.message);
       }
     }
     catch(e){
+      setOpen(false);
       return toast.error(e.message);
     }
 
@@ -82,6 +88,9 @@ const Mypassword = () => {
             </div>
             </main>
         </section>
+        <Backdrop sx={{color : '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open} >
+          <CircularProgress color='inherit' />
+        </Backdrop>
         <Footer />
     </>
   )

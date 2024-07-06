@@ -194,20 +194,18 @@ const Shop = () => {
               <div className={filter ? "main-products-grid" : "main-gird-without-filter"}>
                   {products.map((el) => (
                     <div
-                      style={{ width: !filter && "300px" }}
                       className="main-product"
                       key={el._id}
                       onClick={()=>navigate(`/shop/${el._id}`)}
                     >
 
                       <img
-                      style={{ width: !filter && "300px"}}
                       crossOrigin="anonymous"
                       src={el.photo}
                       alt="products"
                       />
 
-                      <span style={{ bottom: !filter && "17%" }}>
+                      <span style={{ bottom: !filter && "15%" }}>
                         ₹ {el.price}
                       </span>
                       <p>{el.name}</p>
@@ -228,8 +226,8 @@ const Shop = () => {
                 <h2>Products</h2>
                 <div className='skeleton-product-grid'>
                   {new Array(15).fill(0).map(()=>(
-                  <div>
-                    <Skeleton variant="rounded" width={isMobile ? 175 : 230} height={isMobile ? 255 :345} />
+                  <div style={{width : '100%'}}>
+                    <Skeleton variant="rounded" width={'100%'} height={isMobile ? 255 :345} />
                     <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={150} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={100} />
                   </div>

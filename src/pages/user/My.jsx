@@ -9,7 +9,7 @@ import { jwtDecode } from "jwt-decode";
 import { toast } from "react-hot-toast";
 import { logout } from "../../redux/user/action";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import { Skeleton } from "@mui/material";
+import { Backdrop, CircularProgress, Skeleton } from "@mui/material";
 
 const My = () => {
   const navigate = useNavigate();
@@ -27,6 +27,7 @@ const My = () => {
   const [showDel, setDel] = useState();
   const [confirm, setConfrim] = useState();
 
+  const [open,setOpen] = useState(false);
   const [isMobile,setIsMobile] = useState();
 
   if (user) {
@@ -101,7 +102,6 @@ const My = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(photo);
 
     if (!name && !dob && !photo && !phoneNo) {
       return toast.error("Nothing to Update!");
@@ -126,6 +126,9 @@ const My = () => {
 
     async function updateData() {
       try {
+        setPop(false);
+        setConfrim(false); 
+        setOpen(true);
         const res = await fetch(
           `${process.env.REACT_APP_SERVER}/api/user/${details._id}`,
           {
@@ -137,6 +140,7 @@ const My = () => {
 
         if (result.success) {
           toast.success("Updated Successfully!");
+          setOpen(false);
           let id = setTimeout(() => {
             window.location.reload(true);
             return () => clearTimeout(id);
@@ -144,6 +148,7 @@ const My = () => {
           return setPop(false);
         }
       } catch (e) {
+        setOpen(false);
         return toast.error("Something Went Wrong!");
       }
     }
@@ -155,6 +160,9 @@ const My = () => {
       try {
         var rand = Math.floor(Math.random() * colorData.length);
         var color = colorData[rand];
+        setPop(false);
+        setConfrim(false);
+        setOpen(true);
         const res = await fetch(
           `${process.env.REACT_APP_SERVER}/api/user/photo/${details._id}`,
           {
@@ -168,17 +176,20 @@ const My = () => {
           }
         );
         const result = await res.json();
-
+          
         if (result.success) {
           toast.success("Profile Photo Removed!");
+          setOpen(false);
           let id = setTimeout(() => {
             window.location.reload(true);
             return () => clearTimeout(id);
           }, 1000);
           setConfrim(false);
+          setOpen(false);
           return setPop(false);
         }
       } catch (err) {
+        setOpen(false);
         return err;
       }
     }
@@ -335,6 +346,11 @@ const My = () => {
           </main>
         )}
       </section>
+
+
+      <Backdrop sx={{color : '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open} >
+        <CircularProgress color='inherit' />
+      </Backdrop>
 
       {details && (
         <div

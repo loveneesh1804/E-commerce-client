@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Backdrop, CircularProgress } from "@mui/material";
 
 const ComponentSignup = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const ComponentSignup = () => {
 
   const [data, setData] = useState({});
   const [showPassword,setShowPassword] = useState();
+  const [open,setOpen] = useState(false);
 
   const user = useSelector((state) => state.user.user);
 
@@ -85,6 +87,7 @@ const ComponentSignup = () => {
 
   const handleSignIn = async (payload) => {
     try {
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/user/new`, {
         method: "POST",
         headers: {
@@ -96,20 +99,24 @@ const ComponentSignup = () => {
       const data = await res.json();
 
       if (!data.sucess) {
+        setOpen(false);
         return toast.error(data.message);
       }
 
       if (data.sucess) {
+        setOpen(false);
         toast.success(data.message);
         setTimeout(() => navigate("/login"), 1500);
       }
     } catch (err) {
-      toast.error("Login Failed");
+      setOpen(false);
+      toast.error("Signup Failed");
     }
   };
 
   return (
-    <div
+    <>
+      <div
       className="signup"
       onClick={(e) =>
         showGender &&
@@ -177,8 +184,14 @@ const ComponentSignup = () => {
         <button onClick={handleSubmit}>Sign Up</button>
         <p onClick={() => navigate("/login")}>Back To Login</p>
       </div>
-    </div>
+      </div>
+      <Backdrop sx={{color : '#fff'}} open={open} >
+        <CircularProgress color="inherit"  />
+      </Backdrop>
+    </>
   );
 };
 
 export default ComponentSignup;
+
+

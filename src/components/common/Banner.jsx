@@ -15,22 +15,22 @@ const Banner = () => {
       var id = setInterval(()=>{
         if(i===1){
             if(window.innerWidth>1200){
-              setRight(910);
-              setCount(303);
+              setRight(101);
+              setCount(33.33);
             }
             else{
-              setRight(400);
-              setCount(133);
+              setRight(100);
+              setCount(33.33);
             }
         }
         else if(i===2){
             if(window.innerWidth>1200){
-              setRight(prev=>prev+910);
-              setCount(prev=>prev+303);
+              setRight(prev=>prev+101);
+              setCount(prev=>prev+33.33);
             }
             else{
-              setRight(prev=>prev+400);
-              setCount(prev=>prev+133);
+              setRight(prev=>prev+100);
+              setCount(prev=>prev+33.33);
             }
         }
         else if(i===3){
@@ -41,13 +41,13 @@ const Banner = () => {
         else i++;
       },8000)
     return ()=>clearInterval(id);
-  },[right])
+  })
 
   return (
    <>
     <div className="main-banner">
         <div className="banner-carousel">
-          <div style={{right : `${right}px`}} className='banner-box'>
+          <div style={{right : `${right}%`}} className='banner-box'>
             <div className="banner">
               <img src={model1} alt="model" />
               <div className="banner-content">
@@ -86,7 +86,7 @@ const Banner = () => {
         </div>
     </div>
     <div className="carousel-scroll">
-      <div style={{left : `${count}px`}} className='scroller'></div>
+      <div style={{left : `${count}%`}} className='scroller'></div>
     </div>
    </>
   )

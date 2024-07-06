@@ -6,7 +6,7 @@ import {toast} from "react-hot-toast";
 import { useSelector } from 'react-redux';
 import { jwtDecode } from 'jwt-decode';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Skeleton } from '@mui/material';
+import { Backdrop, CircularProgress, Skeleton } from '@mui/material';
 
 const Manage = () => {
   const [product,setProduct] = useState();
@@ -20,6 +20,7 @@ const Manage = () => {
   const [category,setCategory] = useState();
 
   const [modal,setModal] = useState();
+  const [open,setOpen] = useState(false);
   const [deleteModal,setDelete] = useState();
 
   const user = useSelector(state=>state.user.user);
@@ -71,6 +72,8 @@ const Manage = () => {
 
     async function updateData(){
         try{
+            setModal(false);
+            setOpen(true);
             const res = await fetch(`${process.env.REACT_APP_SERVER}/api/product/${product._id}?id=${decoded.id}`,{
                 method : "PUT",
                 body : formData
@@ -78,12 +81,14 @@ const Manage = () => {
             const result = await res.json();
 
             if(result.success){
+                setOpen(false);
                 toast.success("Updated Successfully!");
                 setModal(false);
                 return navigate("/admin/products")
             }
         }
         catch(e){
+            setOpen(false);
             return toast.error("Something Went Wrong!");
         }
     }
@@ -92,22 +97,26 @@ const Manage = () => {
 
   const handleDelete=async()=>{
     try{
-        setDelete(true);
+        setDelete(false);
+        setOpen(true);
         const res = await fetch(`${process.env.REACT_APP_SERVER}/api/product/${product._id}?id=${decoded.id}`,{
             method : "DELETE"
         });
         const result = await res.json();
 
         if(result.success){
+            setOpen(false);
             setDelete(false);
             toast.success("Deleted Successfully!")
             return navigate("/admin/products");
         }
         else{
+            setOpen(false);
             return toast.error("Something Went Wrong!")
         }
     }
     catch(e){
+        setOpen(false);
         return e;
     }
   }
@@ -194,6 +203,12 @@ const Manage = () => {
             </div> 
             }
         </div>
+
+        {/* Loading */}
+
+        <Backdrop sx={{color : '#fff',zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open} >
+          <CircularProgress color='inherit' />
+        </Backdrop>
 
         {/* Modal */}
 

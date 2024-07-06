@@ -25,10 +25,10 @@
 .product{
     font-size: 14px;
     position: relative;
-    height: 450px;
+    height: 100%;
 }
 .product>img{
-    width: 250px;
+    width: 98%;
     border-radius: 10px;
     transition: all 0.4s;
     padding-bottom: 4px;
@@ -42,7 +42,7 @@
 }
 .price{
     position: absolute;
-    bottom: 75px;
+    top: 79%;
     left: 10px;
     padding: 1px 4px;
     background-color: white;
@@ -51,7 +51,7 @@
     border-radius: 2px;
 }
 .product:hover .price{
-    bottom: 85px;
+    top: 76%;
 }
 .heart-ico{
     position: absolute;
@@ -71,14 +71,14 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 447px;
+    grid-auto-rows: 67%;
     transition: all 0.5s;
 }
 .main-gird-without-filter{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 551px;
+    grid-auto-rows: 73.5%;
     transition: all 0.5s;
 }
 .main-product{
@@ -91,7 +91,7 @@
     bottom: 24%;
 }
 .main-product>img{
-    width: 230px;
+    width: 96.9%;
     border-radius: 5px;
     transition: all 1s;
     transform: translate(30);
@@ -239,12 +239,14 @@ cursor:not-allowed;
     display: flex;
     width: 80%;
     justify-content: center;
+    align-items: center;
     margin: auto;
     gap: 1rem;
     padding-bottom: 0px;
 }
 .product-info-img{
     position: relative;
+    width: 28.5%;
 }
 .product-info-img>img{
     width: 340px;
@@ -452,6 +454,7 @@ cursor:not-allowed;
 }
 textarea{
     resize: none;
+    width: 100%;
 }
 textarea:focus{
     outline: none;
@@ -503,16 +506,16 @@ input:disabled{
 @media screen and (min-width: 300px) and (max-width: 900px){
     .main-products-grid{
         grid-template-columns: repeat(2,1fr);
-        grid-auto-rows: 320px;
+        grid-auto-rows: 56.5%;
     }
     .main-product{
         padding: 4px;
         font-weight: 500;
         margin-bottom: 5px;
-        height: 320px;
+        height: 100%;
     }
     .main-product>img{
-        width: 170px;
+        width: 94%;
     }
     .main-product>p{
         font-size: 9px;
@@ -544,10 +547,13 @@ input:disabled{
         gap: 5px;
     }
     .pro-stock{
-        right: 5px;
+        right: -1px;
+    }
+    .product-info-img{
+        width: 98%;
     }
     .product-info-img>img{
-        width: 370px;
+        width: 100%;
     }
     .product-info-details{
         width: 98%;
@@ -621,9 +627,7 @@ input:disabled{
     .review svg{
         font-size: 25px !important;
     }
-    .publish-review textarea{
-        width: 300px !important;
-    }
+    
     .publish-review>form>button{
         color: black;
     }

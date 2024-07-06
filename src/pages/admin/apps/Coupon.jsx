@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
 import CloseIcon from '@mui/icons-material/Close';
-import { Skeleton } from '@mui/material';
+import { Backdrop, CircularProgress, Skeleton } from '@mui/material';
 
 const Coupon = () => {
   const [prefix,setPrefix] = useState("");
@@ -15,6 +15,7 @@ const Coupon = () => {
   const [err,setErr] = useState(false);
   const [errMessage,setErrMessage] = useState("");
   const [discount,setDiscount] = useState();
+  const [open,setOpen] = useState(false);
 
 
   const user = useSelector((state) => state.user.user);
@@ -83,6 +84,7 @@ const Coupon = () => {
 
   const newCoupon=async(coupon,discount)=>{
     try{
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/payment/coupon/new?id=${decode.id}`,{
         method : "POST",
         headers : {
@@ -95,32 +97,39 @@ const Coupon = () => {
       const result = await res.json();
 
       if(result.succes){
+         setOpen(false);
         let id = setTimeout(()=>{
           window.location.reload(true);
           return ()=>clearTimeout(id);
         },1000)
         return toast.success(result.message);
       }else{
+        setOpen(false);
         return toast.error(result.message);
       }
     }
     catch(e){
+      setOpen(false);
       return toast.error(e.message);
     }
   }
 
   const deleteCoupon=async(id)=>{
     try{
+      setOpen(true);
       const res = await fetch(`${process.env.REACT_APP_SERVER}/api/payment/coupon/${id}?id=${decode.id}`,{
         method : "DELETE"
       });
       const result = await res.json();
 
       if(result.succes){
+        setOpen(false);
         return window.location.reload(true);
       }
+      setOpen(false);
     }
     catch(e){
+      setOpen(false);
       return toast.error(e.message);
     }
   }
@@ -175,6 +184,9 @@ const Coupon = () => {
               ))}
           </div>}
       </main>
+      <Backdrop sx={{color : '#fff'}} open={open} >
+          <CircularProgress color='inherit' />
+      </Backdrop>
     </div>
   )
 }

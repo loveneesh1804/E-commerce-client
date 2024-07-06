@@ -501,19 +501,19 @@ const ProductShop = () => {
         ) : <>
         <div className="product-info">
               <div className="product-info-img">
-                <Skeleton variant="rounded" width={isMobile ? 370 :340} height={isMobile ? 555 : 510} />
+                <Skeleton variant="rounded" width={'100%'} height={isMobile ? 555 : 510} />
               </div>
               <div style={{marginTop : "5px"}} className="product-info-details">
-                <Skeleton variant="rounded" width={300} height={30} />
+                <Skeleton variant="rounded" width={'50%'} height={30} />
                 <Skeleton variant="rounded" style={{marginTop:"5px"}} width={80} height={15} />
                 <Skeleton variant="rounded" style={{marginTop:"25px",marginBottom:"4px"}} width={200} height={20} />
-                <Skeleton variant="rounded" width={isMobile ? 340 : 582} height={100} style={{marginBottom : "20px"}} />
+                <Skeleton variant="rounded" width={'100%'} height={100} style={{marginBottom : "20px"}} />
                 <Skeleton variant="rounded" width={97} height={36} />
 
 
                 <section>
                     <Skeleton style={{marginTop : "4px"}} variant="rounded" width={50} height={11} />
-                    <Skeleton style={{marginTop : "4px"}} variant="rounded" width={isMobile ? 340 : 565} height={48} />
+                    <Skeleton style={{marginTop : "4px"}} variant="rounded" width={'100%'} height={48} />
                 </section>
 
 
@@ -557,7 +557,7 @@ const ProductShop = () => {
                       <div className="comment-content">
                         <Skeleton width={100} height={18} variant="rounded" />
                         <Skeleton width={150} style={{margin : "4px 0px"}} height={10} variant="rounded" />
-                        <Skeleton width={isMobile ? 340 : 500} height={80} variant="rounded" />
+                        <Skeleton width={'100%'} height={80} variant="rounded" />
                       </div>
                       
                     </div>

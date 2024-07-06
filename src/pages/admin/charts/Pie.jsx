@@ -89,7 +89,7 @@ const Pie = () => {
                 "rgb(52, 152, 219 ) ",
                 "rgb(40, 116, 166 )",
               ]}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 :382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2>Order Fulfillment ratio</h2>
           </div>
           <div>
@@ -99,7 +99,7 @@ const Pie = () => {
               data={data.categoryPercent.map(el=>Object.values(el)[0])}
               legends = {false}
               bgColor={new Array(data.categoryPercent.length).fill(0).map(()=>colorHandler())}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 : 382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2>Product Categories ratio</h2>
           </div>
         </div>
@@ -115,7 +115,7 @@ const Pie = () => {
                 "rgb(125, 60, 152  )",
               ]}
               cutout={"10%"}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 : 382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2 style={{marginTop : "10px"}}>Stock Availability</h2>
           </div>
           <div>
@@ -131,7 +131,7 @@ const Pie = () => {
               ]}
               cutout={"70%"}
               legends={false}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 : 382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2>Revenue Distribution</h2>
           </div>
         </div>
@@ -146,7 +146,7 @@ const Pie = () => {
                 "rgb(241, 148, 138) ",
                 "rgb(220, 118, 51 )",
               ]}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 : 382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2>User Age Group</h2>
           </div>
           <div>
@@ -160,7 +160,7 @@ const Pie = () => {
                 "rgb(40, 180, 99 ",
                 "rgb(130, 224, 170  ) ",
               ]}
-            /> : <Skeleton variant="circular" height={mobile ? 354 : 382} width={mobile ? 354 : 382} />}
+            /> : <Skeleton variant="circular" height={'80%'} width={'100%'} />}
             <h2 style={{marginTop : "20px"}}>Role Ratio</h2>
           </div>
         </div>

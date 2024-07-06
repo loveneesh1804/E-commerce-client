@@ -10,13 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {resetCart} from "../../redux/cart/action";
 import {reset} from "../../redux/order/action";
 import { jwtDecode } from 'jwt-decode';
+import { Backdrop, CircularProgress } from '@mui/material';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 
 const PaymentForm=()=>{
     const [processing,setProcessing] = useState();
-
     const stripe = useStripe();
     const elements = useElements();
     const dispatch = useDispatch();
@@ -40,7 +40,6 @@ const PaymentForm=()=>{
             return toast.error("Something Went Wrong!");
         }
         setProcessing(true);
-
         const {paymentIntent,error} = await stripe.confirmPayment({
             elements,
             confirmParams : { return_url : window.location.origin },
@@ -100,6 +99,7 @@ const PaymentForm=()=>{
 
 const Payment = () => {
     const [captcha,setCaptcha] = useState();
+    const [open,setOpen] = useState(false);
     const [code,setCode] = useState();
     const location = useLocation();
     const clientSecret = location.state;
@@ -137,6 +137,7 @@ const Payment = () => {
             if(captcha !== code){
                 return toast.error("Invalid Captcha");
             }
+            setOpen(true);
             const res = await fetch(`${process.env.REACT_APP_SERVER}/api/order/new`,{
                 method : "POST",
                 headers : {
@@ -150,15 +151,18 @@ const Payment = () => {
             if(result.succes){
                 dispatch(resetCart());
                 dispatch(reset());
+                setOpen(false);
                 toast.success("Order Placed Successfully!");
                 return navigate(`/my/orders/${decode.id}`);
             }
             else{
+                setOpen(false);
                 return toast.error("Something Went Wrong!")
             }
 
         }
         catch(e){
+            setOpen(false);
             return toast.error(e.message);   
         }
     }
@@ -189,6 +193,9 @@ const Payment = () => {
                 <button type='submit' >Place Order</button>
             </form>
         </div>
+        <Backdrop sx={{color : '#fff'}} open={open} >
+          <CircularProgress color='inherit' />
+        </Backdrop>
         <Footer />
     </>
     
