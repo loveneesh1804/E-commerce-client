@@ -11,9 +11,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-button{
+button,input,textarea{
     color: black
 }
+
 
 
 @import url("./Admin.css");
