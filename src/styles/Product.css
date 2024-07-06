@@ -42,7 +42,7 @@
 }
 .price{
     position: absolute;
-    top: 84%;
+    top: 83%;
     left: 10px;
     padding: 1px 4px;
     background-color: white;
@@ -51,7 +51,7 @@
     border-radius: 2px;
 }
 .product:hover .price{
-    top: 76%;
+    top: 81%;
 }
 .heart-ico{
     position: absolute;
