@@ -42,7 +42,7 @@
 }
 .price{
     position: absolute;
-    top: 81%;
+    top: 84%;
     left: 10px;
     padding: 1px 4px;
     background-color: white;
@@ -86,11 +86,10 @@
     padding: 4px;
     font-weight: 300;
     position: relative;
-    height: 88%;
-    padding-bottom: 50px;
+    height: 447px;
 }
 .main-product:hover span{
-    bottom: 24%;
+    bottom: 25%;
 }
 .main-product>img{
     width: 96.9%;
@@ -104,7 +103,7 @@
 }
 .main-product>span{
     position: absolute;
-    bottom: 21%;
+    bottom: 22%;
     transition: all 0.3s;
     left: 0px;
     background-color: white;
