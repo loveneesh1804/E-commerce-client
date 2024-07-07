@@ -497,7 +497,7 @@
     }
     .update-form>div:first-child{
         gap: 15px;
-        font-size: 12px;
+        font-size: 11px;
     }
     .update-form>div:first-child>button{
         font-size: 12px;
