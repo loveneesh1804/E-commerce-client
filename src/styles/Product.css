@@ -80,9 +80,9 @@
 }
 .main-gird-without-filter{
     display: grid;
-    width: 115%;
+    width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 92%;
+    grid-auto-rows: 115%;
     transition: all 0.5s;
     padding-bottom: 100px;
 }
