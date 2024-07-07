@@ -36,6 +36,7 @@ const ProductNew = ({ view, setView }) => {
       formData.set("category", category);
 
       var decode = jwtDecode(admin.token);
+      setView(false);
       setOpen(true);
       const res = await fetch(
         `${process.env.REACT_APP_SERVER}/api/product/new?id=${decode.id}`,
@@ -56,10 +57,12 @@ const ProductNew = ({ view, setView }) => {
         return setView(false);
       } else {
         setOpen(false);
+        setView(true);
         return toast.error("Something Went Wrong!");
       }
     } catch (e) {
       setOpen(false);
+      setView(true);
       return toast.error(e);
     }
   };
