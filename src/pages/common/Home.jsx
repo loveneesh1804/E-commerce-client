@@ -66,8 +66,10 @@ const Home = () => {
               <Carousel responsive={responsive}>
               {latest.map((el)=>(
                 <div onClick={()=>navigate(`/shop/${el._id}`)} className='product' key={el._id}>
-                    <img crossOrigin='anonymous' src={el.photo} alt='por-ico' />
-                    <span className='price'>₹{el.price}</span>
+                    <div>
+                      <img crossOrigin='anonymous' src={'https://res.cloudinary.com/djwpcqv3o/image/upload/v1720000389/ipopaeaydb7xtph7n7kr.jpg'} alt='por-ico' />
+                      <span className='price'>₹{el.price}</span>
+                    </div>
                     <p>{el.name}</p>
                     <span>{el.category}</span>
                     <FavoriteIcon className='heart-ico' />

@@ -199,15 +199,17 @@ const Shop = () => {
                       onClick={()=>navigate(`/shop/${el._id}`)}
                     >
 
-                      <img
-                      crossOrigin="anonymous"
-                      src={el.photo}
-                      alt="products"
-                      />
+                      <div>
+                        <img
+                        crossOrigin="anonymous"
+                        src={el.photo}
+                        alt="products"
+                        />
 
-                      <span style={{ bottom: !filter && "15%" }}>
-                        ₹ {el.price}
-                      </span>
+                        <span>
+                          ₹ {el.price}
+                        </span>
+                      </div>
                       <p>{el.name}</p>
                       <h6>{el.category}</h6>
                     </div>

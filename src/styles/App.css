@@ -1115,7 +1115,7 @@ body{
     .product{
         font-size: 10px;
     }
-    .product>img{
+    .product>div>img{
         border-radius: 10px;
     }
     .product>p{
@@ -1125,11 +1125,11 @@ body{
         font-size: 8px;
     }
     .price{
-        top: 77%;
+        bottom: 2%;
         left: 6px;
     }
     .product:hover .price{
-        top: 75%;
+        bottom: 4%;
     }
     .heart-ico{
         top: 8px;
