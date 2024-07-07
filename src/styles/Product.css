@@ -74,13 +74,13 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: 85%;
+    grid-auto-rows: 120%;
     transition: all 0.5s;
     padding-bottom: 100px;
 }
 .main-gird-without-filter{
     display: grid;
-    width: 100%;
+    width: 115%;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 92%;
     transition: all 0.5s;

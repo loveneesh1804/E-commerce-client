@@ -67,7 +67,7 @@ const Home = () => {
               {latest.map((el)=>(
                 <div onClick={()=>navigate(`/shop/${el._id}`)} className='product' key={el._id}>
                     <div>
-                      <img crossOrigin='anonymous' src={'https://res.cloudinary.com/djwpcqv3o/image/upload/v1720000389/ipopaeaydb7xtph7n7kr.jpg'} alt='por-ico' />
+                      <img crossOrigin='anonymous' src={el.photo} alt='por-ico' />
                       <span className='price'>₹{el.price}</span>
                     </div>
                     <p>{el.name}</p>
